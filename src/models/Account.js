@@ -1,4 +1,8 @@
 var crypto = require('crypto');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 71f2d7aa5dbfb70f802abefa187bcaba99e5867d
 var mongoose = require('mongoose');
 
 var AccountModel;
@@ -6,6 +10,16 @@ var iterations = 10000;
 var saltLength = 64;
 var keyLength = 64;
 
+<<<<<<< HEAD
+=======
+var encodePassword = function(pass, salt, callback) {
+	//return crypto.pbkdf2Sync(pass, salt, iterations, keyLength);
+	
+	//password, salt, iterations, keylen)
+	
+};
+
+>>>>>>> 71f2d7aa5dbfb70f802abefa187bcaba99e5867d
 var AccountSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -33,6 +47,7 @@ var AccountSchema = new mongoose.Schema({
 });
 
 AccountSchema.methods.toAPI = function() {
+
     //_id is built into your mongo document and is guaranteed to be unique
     return {
         username: this.username,

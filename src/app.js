@@ -29,8 +29,7 @@ app.use('/assets', express.static(path.resolve(__dirname+'../../client/')));
 app.use(compression()); 
 app.use(bodyParser.urlencoded({ 
   extended: true                
-}));                            
-                            
+}));                                                       
 app.set('view engine', 'jade'); 
 app.set('views', __dirname + '/views'); 
 app.use(favicon(__dirname + '/../client/img/favicon.png')); 

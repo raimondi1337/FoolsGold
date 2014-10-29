@@ -41,8 +41,8 @@ DomoSchema.methods.toAPI = function() {
     };
 };
 
-DomoSchema.statics.findByOwner = function(ownerId, callback) {
 
+DomoSchema.statics.findByOwner = function(ownerId, callback) {
 
 };
 
