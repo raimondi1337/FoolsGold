@@ -1,10 +1,17 @@
-var bcrypt = require('bcrypt');
+var crypto = require('crypto');
+
 var mongoose = require('mongoose');
 
 var AccountModel;
+var iterations = 10000;
+var saltLength = 64;
+var keyLength = 64;
 
-var encodePassword = function(pass) {
-    return bcrypt.hashSync(pass, 8);
+var encodePassword = function(pass, salt, callback) {
+	//return crypto.pbkdf2Sync(pass, salt, iterations, keyLength);
+	
+	//password, salt, iterations, keylen)
+	
 };
 
 var AccountSchema = new mongoose.Schema({
@@ -15,11 +22,15 @@ var AccountSchema = new mongoose.Schema({
         unique: true,
         match: /^[A-Za-z0-9_\-\.]{1,16}$/
     },
+	
+	salt: {
+		type: Buffer,
+		required: true
+	},
     
     password: {
         type: String,
-        required: true,
-        set: encodePassword
+        required: true
     },
     
     createdData: {
@@ -36,7 +47,16 @@ AccountSchema.methods.toAPI = function() {
 };
 
 AccountSchema.methods.validatePassword = function(password, callback) {
-    bcrypt.compare(password, this.password, callback);
+    //bcrypt.compare(password, this.password, callback);
+	
+	var pass = this.password;
+	
+	crypto.pbkdf2(password, this.salt, iterations, keyLength, function(err, hash) {
+		if(hash.toString('hex') !== pass) {
+			return callback(false);
+		}
+		return callback(true);
+	});
 };
 
 AccountSchema.statics.findByUsername = function(name, callback) {
@@ -47,6 +67,14 @@ AccountSchema.statics.findByUsername = function(name, callback) {
 
     return AccountModel.findOne(search, callback);
 };
+
+AccountSchema.statics.generateHash = function(password, callback) {
+	var salt = crypto.randomBytes(saltLength);
+	
+	crypto.pbkdf2(password, salt, iterations, keyLength, function(err, hash){
+		return callback(salt, hash.toString('hex'));
+	});
+}
 
 AccountSchema.statics.authenticate = function(username, password, callback) {
 	return AccountModel.findByUsername(username, function(err, doc) {
@@ -60,11 +88,7 @@ AccountSchema.statics.authenticate = function(username, password, callback) {
             return callback();
         }
 
-        doc.validatePassword(password, function(err, result) {
-            if(err) {
-                return callback(err);
-            }
-            
+        doc.validatePassword(password, function(result) {
             if(result === true) {
                 return callback(null, doc);
             }

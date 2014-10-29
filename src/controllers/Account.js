@@ -42,23 +42,26 @@ var signup = function(req, res) {
     if(req.body.pass !== req.body.pass2) {
         return res.status(400).json({error: "RAWR! Passwords do not match"});
     }
-    
-    var accountData = {
-        username: req.body.username,
-        password: req.body.pass
-    };
-    
-    var newAccount = new Account.AccountModel(accountData);
-    
-    newAccount.save(function(err) {
-        if(err) {
-            console.log(err);
-            return res.status(400).json({error:'An error occurred'}); 
-        }
-       
-        res.json({redirect: '/maker'});
-    });
-    
+	
+	Account.AccountModel.generateHash(req.body.pass, function(salt, hash) {
+
+		var accountData = {
+			username: req.body.username,
+			salt: salt,
+			password: hash
+		};
+		
+		var newAccount = new Account.AccountModel(accountData);
+		
+		newAccount.save(function(err) {
+			if(err) {
+				console.log(err);
+				return res.status(400).json({error:'An error occurred'}); 
+			}
+
+			res.json({redirect: '/maker'});
+		});
+	});
 };
 
 module.exports.loginPage = loginPage;
