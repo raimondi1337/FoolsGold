@@ -6,7 +6,6 @@ var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser'); 
 var bodyParser = require('body-parser'); 
 var mongoose = require('mongoose'); 
-var session = require('express-session');
  
 var dbURL = process.env.MONGOHQ_URL || "mongodb://localhost/DomoMaker";
 
