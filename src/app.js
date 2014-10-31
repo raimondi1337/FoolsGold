@@ -30,19 +30,6 @@ if(process.env.REDISCLOUD_URL){
   redisPASS = redisURL.auth.split(":")[1];
 }
 
-var redis = require('redis');
-var client = redis.createClient(redisURL.port, redisURL.hostname);
-client.auth(redisPASS);
-
-  client.on('connect', function() {
-    console.log('Redis client connection established');
-  });
-
-  client.on('error', function(err) {
-    console.log(err);
-  });
-
-
 //pull in our routes
 var router = require('./router.js'); 
 

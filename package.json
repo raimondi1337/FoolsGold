@@ -27,7 +27,6 @@
     "express-session": "^1.9.1",
     "jade": "^1.7.0",
     "mongoose": "^3.8.18",
-    "redis": "^0.12.1",
     "serve-favicon": "^2.1.6",
     "underscore": "^1.7.0"
   },
