@@ -28,6 +28,7 @@ var bypassSecure = function(req, res, next) {
     next();
 };
 
+console.log("@@@@@" + process.env.NODE_ENV);
 if(process.env.NODE_ENV === "production") {
     module.exports.requiresSecure = requiresSecure;
 }
