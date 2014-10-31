@@ -11,7 +11,7 @@ var router = function(app) {
     app.get("/logout", mid.requiresLogin, controllers.Account.logout);
     app.get("/maker", mid.requiresLogin, controllers.Domo.makerPage);
     app.post("/maker", controllers.Domo.make);
-    app.get("/", controllers.Account.loginPage);
+    app.get("/", mid.requiresSecure, controllers.Account.loginPage);
 };
 
 module.exports = router; 
