@@ -32,6 +32,7 @@ if(process.env.REDISCLOUD_URL){
 
 console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 console.log(redisURL);
+console.log('############$$$$$$$$$$$############$$$$$$$');
 console.log(redisPASS);
 console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 
