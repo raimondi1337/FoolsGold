@@ -17,7 +17,10 @@ var requiresLogout = function(req, res, next) {
 }
 
 var requiresSecure = function(req, res, next) {
+
+    console.log(req.secure);
     if(!req.secure) {
+        console.log("@@@redirecting");
         return res.redirect("https://" + req.host + req.url);
     }
     
@@ -28,7 +31,6 @@ var bypassSecure = function(req, res, next) {
     next();
 };
 
-console.log("@@@@@" + process.env.NODE_ENV);
 if(process.env.NODE_ENV === "production") {
     module.exports.requiresSecure = requiresSecure;
 }
