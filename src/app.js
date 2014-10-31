@@ -35,15 +35,11 @@ var client = redis.createClient(redisURL.port, redisURL.hostname);
 client.auth(redisPASS);
 
   client.on('connect', function() {
-    log.info('Redis client connection established');
-    if (callback) {
-      callback();
-      callback = function() {};
-    }
+    console.log('Redis client connection established');
   });
 
   client.on('error', function(err) {
-    util.handleErr(err);
+    console.log(err);
   });
 
 
