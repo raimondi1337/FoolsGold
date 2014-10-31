@@ -10,6 +10,14 @@ var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
  
 var dbURL = process.env.MONGOHQ_URL || "mongodb://localhost/DomoMaker";
+
+var db = mongoose.connect(dbURL, function(err) {
+    if(err) {
+        console.log("Could not connect to database");
+        throw err;
+    }
+});
+
 var redisURL = {
     hostname: 'localhost',
     port: 6379
@@ -21,12 +29,7 @@ if(process.env.REDISCLOUD_URL){
   redisPASS = redisURL.auth.split(":")[1];
 }
 
-var db = mongoose.connect(dbURL, function(err) {
-    if(err) {
-        console.log("Could not connect to database");
-        throw err;
-    }
-});
+
 
 //pull in our routes
 var router = require('./router.js'); 
