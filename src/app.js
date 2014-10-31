@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose'); 
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+var url = require('url');
  
 var dbURL = process.env.MONGOHQ_URL || "mongodb://localhost/DomoMaker";
 
