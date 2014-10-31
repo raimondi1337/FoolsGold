@@ -58,9 +58,9 @@ app.use(bodyParser.urlencoded({
 app.use(session({
     store: new RedisStore({
         host: redisURL.hostname,
-        port: redisURL.port
+        port: redisURL.port,
+        pass: redisPASS
     }),
-    pass: redisPASS,
     secret: 'Domo Arigato',
     resave: true,
     saveUninitialized: true
