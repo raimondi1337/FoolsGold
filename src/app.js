@@ -30,6 +30,10 @@ if(process.env.REDISCLOUD_URL){
   redisPASS = redisURL.auth.split(":")[1];
 }
 
+console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+console.log(redisURL);
+console.log(redisPASS);
+console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 
 
 //pull in our routes
