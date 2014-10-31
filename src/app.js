@@ -19,6 +19,18 @@ var db = mongoose.connect(dbURL, function(err) {
     }
 });
 
+var redisURL = {
+    hostname: 'localhost',
+    port: 6379
+};
+
+var redisPASS;
+
+if(process.env.REDISCLOUD_URL){
+    redisURL = url.parse(process.env.REDISCLOUD_URL);
+    redisPASS = redisURL.auth.split(":")[1];
+}
+
 //pull in our routes
 var router = require('./router.js'); 
 
@@ -32,7 +44,11 @@ app.use(bodyParser.urlencoded({
   extended: true                
 }));                            
 app.use(session({
-    store: new RedisStore(),
+    store: new RedisStore({
+        host: redisURL.hostname,
+        port: redisURL.port,
+        pass: redisPASS 
+    }),
     secret: 'Domo Arigato',
     resave: true,
     saveUninitialized: true
