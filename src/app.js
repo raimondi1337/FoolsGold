@@ -30,11 +30,21 @@ if(process.env.REDISCLOUD_URL){
   redisPASS = redisURL.auth.split(":")[1];
 }
 
-console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-console.log(redisURL);
-console.log('############$$$$$$$$$$$############$$$$$$$');
-console.log(redisPASS);
-console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+var redis = require('redis');
+var client = redis.createClient(redisURL.port, redisURL.hostname);
+client.auth(redisPASS);
+
+  client.on('connect', function() {
+    log.info('Redis client connection established');
+    if (callback) {
+      callback();
+      callback = function() {};
+    }
+  });
+
+  client.on('error', function(err) {
+    util.handleErr(err);
+  });
 
 
 //pull in our routes
