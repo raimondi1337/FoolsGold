@@ -18,7 +18,6 @@
   "author": "Cody Van De Mark",
   "license": "Apache 2.0",
   "dependencies": {
-    "bcrypt": "^0.8.0",
     "body-parser": "^1.9.1",
     "compression": "^1.2.0",
     "connect-redis": "^2.1.0",
