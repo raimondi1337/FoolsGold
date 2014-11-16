@@ -14,6 +14,8 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(result, status, xhr) {
+                $("#domoMessage").animate({width:'hide'},350);
+
                 window.location = result.redirect;
             },
             error: function(xhr, status, error) {
@@ -32,7 +34,7 @@ $(document).ready(function() {
             return false;
         }
 
-        sendAjax($("#addScrape").attr("action"), $("#addScrape").serialize());
+        sendAjax($("#addScrape").attr("action"), $("#scrapeForm").serialize());
         
         return false;
     });
