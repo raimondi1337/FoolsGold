@@ -27,17 +27,17 @@ $(document).ready(function() {
         });        
     }
     
-    $("#makeScrapeSubmit").on("click", function(e) {
+    $("#makeDomoSubmit").on("click", function(e) {
         e.preventDefault();
     
         $("#domoMessage").animate({width:'hide'},350);
     
-        if($("#scrapeURL").val() == '' || $("#scrapeQuery").val() == '') {
-            handleError("All fields are required");
+        if($("#domoName").val() == '' || $("#domoAge").val() == '') {
+            handleError("RAWR! All fields are required");
             return false;
         }
 
-        sendAjax($("#scrapeForm").attr("action"), $("#scrapeForm").serialize());
+        sendAjax($("#domoForm").attr("action"), $("#domoForm").serialize());
         
         return false;
     });
