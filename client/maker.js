@@ -4,7 +4,6 @@ $(document).ready(function() {
 
     function handleError(message) {
         $("#errorMessage").text(message);
-        $("#domoMessage").animate({width:'toggle'},350);
     }
     
     function sendAjax(action, data) {
@@ -27,17 +26,15 @@ $(document).ready(function() {
         });        
     }
     
-    $("#makeDomoSubmit").on("click", function(e) {
+    $("#addScrapeSubmit").on("click", function(e) {
         e.preventDefault();
     
-        $("#domoMessage").animate({width:'hide'},350);
-    
-        if($("#domoName").val() == '' || $("#domoAge").val() == '') {
-            handleError("RAWR! All fields are required");
+        if($("#scrapeURL").val() == '' || $("#scrapeQuery").val() == '') {
+            handleError("All fields are required");
             return false;
         }
 
-        sendAjax($("#domoForm").attr("action"), $("#domoForm").serialize());
+        sendAjax($("#addScrape").attr("action"), $("#addScrape").serialize());
         
         return false;
     });
