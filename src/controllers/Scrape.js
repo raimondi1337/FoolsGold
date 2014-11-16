@@ -30,7 +30,7 @@ var makeScrape = function(req, res) {
     
     var newScrape = new Scrape.ScrapeModel(scrapeData);
     
-    newScraoe.save(function(err) {
+    newScrape.save(function(err) {
         if(err) {
             console.log(err);
             return res.status(400).json({error:'An error occurred'}); 
