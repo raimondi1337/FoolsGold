@@ -27,7 +27,7 @@ $(document).ready(function() {
         });        
     }
     
-    $("#makeDomoSubmit").on("click", function(e) {
+    $("#makeScrapeSubmit").on("click", function(e) {
         e.preventDefault();
     
         $("#domoMessage").animate({width:'hide'},350);
@@ -37,7 +37,7 @@ $(document).ready(function() {
             return false;
         }
 
-        sendAjax($("#domoForm").attr("action"), $("#domoForm").serialize());
+        sendAjax($("#scrapeForm").attr("action"), $("#scrapeForm").serialize());
         
         return false;
     });
