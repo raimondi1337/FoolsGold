@@ -1,7 +1,7 @@
 var _ = require('underscore');
 var models = require('../models');
 
-var Domo = models.Domo;
+var Scrape = models.Scrape;
 
 var makerPage = function(req, res) {
     
@@ -12,25 +12,25 @@ var makerPage = function(req, res) {
             return res.status(400).json({error:'An error occurred'}); 
         }
         
-        res.render('app', {domos: docs});
+        res.render('app', {scrapes: docs});
     });
 };
 
-var makeDomo = function(req, res) {
+var makeScrape = function(req, res) {
 
     if(!req.body.url || !req.body.query) {
         return res.status(400).json({error: "RAWR! Both name and age are required"});
     }
     
-    var domoData = {
+    var ScrapeData = {
         url: req.body.url,
         query: req.body.query,
         owner: req.session.account._id
     };
     
-    var newDomo = new Domo.DomoModel(domoData);
+    var newScrape = new Scrape.ScrapeModel(ScrapeData);
     
-    newDomo.save(function(err) {
+    newScrape.save(function(err) {
         if(err) {
             console.log(err);
             return res.status(400).json({error:'An error occurred'}); 
@@ -42,4 +42,4 @@ var makeDomo = function(req, res) {
 };
 
 module.exports.makerPage = makerPage;
-module.exports.make = makeDomo;
+module.exports.make = makeScrape;
