@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var _ = require('underscore');
 
-var DomoModel;
+var ScrapeModel;
 
 var setName = function(name) {
     return _.escape(name).trim();
