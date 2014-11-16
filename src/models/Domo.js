@@ -3,16 +3,16 @@ var _ = require('underscore');
 
 var ScrapeModel;
 
-var setName = function(name) {
-    return _.escape(name).trim();
+var setURL = function(url) {
+    return _.escape(url).trim();
 };
 
-var DomoSchema = new mongoose.Schema({
+var ScrapeSchema = new mongoose.Schema({
     url: {
         type: String,
         required: true,
         trim: true,
-        set: setName
+        set: setURL
     },
     
     query: {
@@ -34,14 +34,14 @@ var DomoSchema = new mongoose.Schema({
 
 });
 
-DomoSchema.methods.toAPI = function() {
+ScrapeSchema.methods.toAPI = function() {
     return {
-        name: this.url,
-        age: this.query
+        url: this.url,
+        query: this.query
     };
 };
 
-DomoSchema.statics.findByOwner = function(ownerId, callback) {
+ScrapeSchema.statics.findByOwner = function(ownerId, callback) {
 
     var search = {
         owner: mongoose.Types.ObjectId(ownerId)
@@ -51,8 +51,8 @@ DomoSchema.statics.findByOwner = function(ownerId, callback) {
 };
 
 
-DomoModel = mongoose.model('Domo', DomoSchema);
+scrapeModel = mongoose.model('scrape', ScrapeSchema);
 
 
-module.exports.DomoModel = DomoModel;
-module.exports.DomoSchema = DomoSchema;
+module.exports.ScrapeModel = ScrapeModel;
+module.exports.ScrapeSchema = ScrapeSchema;
