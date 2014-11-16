@@ -1,31 +1,31 @@
 var mongoose = require('mongoose');
 var _ = require('underscore');
 
-var DomoModel;
+var ScrapeModel;
 
-var setName = function(name) {
-    return _.escape(name).trim();
+var setURL = function(url) {
+    return _.escape(url).trim();
 };
 
-var DomoSchema = new mongoose.Schema({
-    name: {
+var ScrapeSchema = new mongoose.Schema({
+    url: {
         type: String,
         required: true,
         trim: true,
-        set: setName
+        set: setURL
     },
     
-    age: {
-        type: Number,
-        min: 0,
+    query: {
+        type: String,
+        trim: true,
         required: true
     },
     
-    owner: 	{
-		type: mongoose.Schema.ObjectId,
-		required: true,
-		ref: 'Account'
-	},
+    owner:  {
+        type: mongoose.Schema.ObjectId,
+        required: true,
+        ref: 'Account'
+    },
     
     createdData: {
         type: Date,
@@ -34,25 +34,25 @@ var DomoSchema = new mongoose.Schema({
 
 });
 
-DomoSchema.methods.toAPI = function() {
+ScrapeSchema.methods.toAPI = function() {
     return {
-        name: this.name,
-        age: this.age
+        url: this.url,
+        query: this.query
     };
 };
 
-DomoSchema.statics.findByOwner = function(ownerId, callback) {
+ScrapeSchema.statics.findByOwner = function(ownerId, callback) {
 
     var search = {
         owner: mongoose.Types.ObjectId(ownerId)
     };
 
-    return DomoModel.find(search).select("name age").exec(callback);
+    return ScrapeModel.find(search).select("url query").exec(callback);
 };
 
 
-DomoModel = mongoose.model('Domo', DomoSchema);
+ScrapeModel = mongoose.model('Scrape', ScrapeSchema);
 
 
-module.exports.DomoModel = DomoModel;
-module.exports.DomoSchema = DomoSchema;
+module.exports.ScrapeModel = ScrapeModel;
+module.exports.ScrapeSchema = ScrapeSchema;
