@@ -8,16 +8,16 @@ var setName = function(name) {
 };
 
 var DomoSchema = new mongoose.Schema({
-    name: {
+    url: {
         type: String,
         required: true,
         trim: true,
         set: setName
     },
     
-    age: {
-        type: Number,
-        min: 0,
+    query: {
+        type: String,
+        trim: true,
         required: true
     },
     
