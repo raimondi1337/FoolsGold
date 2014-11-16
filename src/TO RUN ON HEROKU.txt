@@ -1,0 +1,3 @@
+Needs addon for MongoHQ
+Needs addon for RedisCloud
+Needs custom environment variable put in the heroku settings called NODE_ENV with the value "production"

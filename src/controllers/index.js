@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //function to return the main page
 //express functions always receive the request and response objects
 var main = function(req, res){
@@ -74,3 +75,7 @@ module.exports.getVariablePage = getVariablePage;
 module.exports.getExtended = getExtended;
 module.exports.getGallery = getGallery;
 module.exports.updateTime = updateTime;
+=======
+module.exports.Account = require('./Account.js');
+module.exports.Domo = require('./Domo.js');
+>>>>>>> parent of f64b764... removed jade

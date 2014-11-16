@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Project Proposal</title>
+</head>
+
+<body>
+	<h1>Forum Classifieds as a Service</h1>
+
+	<h2>Provided by Dustin Raimondi</h2>
+
+	<p>A service that automatically scrapes non-rss enabled forum classifieds
+	for specific terms and notifies that person when a new classified ad
+	meeting their criteria is posted.</p>
+
+	<h3>User Experience</h3>
+
+	<ol>
+		<li>User navigates to my website</li>
+
+		<li>Creates an account using their email address</li>
+
+		<li>Is presented with a simple dashboard that lists pages to
+		scrape</li>
+
+		<li>Each page gets a list of terms to be scraped for</li>
+
+		<li>User saves searches</li>
+
+		<li>My server scrapes all listed pages for all search terms # times per
+		day</li>
+
+		<li>New hits are emailed to the user</li>
+
+		<li>There could be a list of hits in the dashboard depending on how
+		much time I have to spend on the front end</li>
+	</ol>
+
+	<h3>How is it a multi user system?</h3>
+
+	<p>Each user will have a specific set of pages to scrape for specific
+	terms.</p>
+
+	<h3>Client Side</h3>
+
+	<p>The client is a web interface that allows configuration of the scraping
+	software by the client, written in HTML5 and Javascript.</p>
+
+	<h3>Server Side</h3>
+
+	<p>The server stores the user’s credentials, scraping configurations and
+	past hits to avoid redundancy. Users interact with the server by providing
+	pages to scrape and terms to scrape for.</p>
+
+	<h3>Inspiration</h3>
+
+	<p>This project is inspired by me spending too much time on Craigslist.
+	Craigslist provides RSS feeds for specific searches, so I can catch deals
+	on Craigslist the moment they’re posted. Many other web classifieds do not
+	support RSS.</p>
+
+	<h3>Libraries that may be useful</h3>
+
+	<p>jQuery, Phantom.js (node)</p>
+</body>
+</html>
