@@ -15,9 +15,9 @@ block body
       input#scrapeQuery(type="text", name="query", placeholder="ie 6UL wheels")
       a#makeScrapeSubmit(class="makeScrapeSubmit", href="#") Make new Scrape
   section#scrapes
-    if !scrapes || scrapes.length == 0
-        div.scrape
-            h3.emptyScrape No Scrapes yet
+    if !domos || domos.length == 0
+        div.domo
+            h3.emptyDomo Bo Scrapes yet
     else
         each val in domos
             div.domo
