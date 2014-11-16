@@ -19,8 +19,8 @@ block body
         div.scrape
             h3.emptyScrape No Scrapes yet
     else
-        each val in scrapes
-            div.scrape
+        each val in domos
+            div.domo
                 img(class="domoFace", src="/assets/img/domoface.jpeg", alt="domo face")
                 h3.scrapeURL URL: #{val.url}
                 h3.scrapeQuery Query: #{val.query}
