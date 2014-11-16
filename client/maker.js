@@ -15,6 +15,8 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(result, status, xhr) {
+                $("#domoMessage").animate({width:'hide'},350);
+
                 window.location = result.redirect;
             },
             error: function(xhr, status, error) {
@@ -35,11 +37,7 @@ $(document).ready(function() {
             return false;
         }
 
-<<<<<<< HEAD
-        sendAjax($("#addScrape").attr("action"), $("#scrapeForm").serialize());
-=======
         sendAjax($("#domoForm").attr("action"), $("#domoForm").serialize());
->>>>>>> parent of 5e78c9b... playing with jade and stuff, probably broke everything
         
         return false;
     });

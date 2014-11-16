@@ -1,36 +1,36 @@
 var _ = require('underscore');
 var models = require('../models');
 
-var Scrape = models.Scrape;
+var Domo = models.Domo;
 
 var makerPage = function(req, res) {
     
-    Scrape.ScrapeModel.findByOwner(req.session.account._id, function(err, docs) {
+    Domo.DomoModel.findByOwner(req.session.account._id, function(err, docs) {
 
         if(err) {
             console.log(err);
             return res.status(400).json({error:'An error occurred'}); 
         }
         
-        res.render('app', {scrapes: docs});
+        res.render('app', {domos: docs});
     });
 };
 
-var addScrape = function(req, res) {
+var makeDomo = function(req, res) {
 
     if(!req.body.name || !req.body.age) {
-        return res.status(400).json({error: "Both URL and Query are required"});
+        return res.status(400).json({error: "RAWR! Both name and age are required"});
     }
     
-    var scrapeData = {
-        url: req.body.url,
-        query: req.body.query,
+    var domoData = {
+        name: req.body.name,
+        age: req.body.age,
         owner: req.session.account._id
     };
     
-    var newScrape = new Scrape.ScrapeModel(scrapeData);
+    var newDomo = new Domo.DomoModel(domoData);
     
-    newScrape.save(function(err) {
+    newDomo.save(function(err) {
         if(err) {
             console.log(err);
             return res.status(400).json({error:'An error occurred'}); 
@@ -42,4 +42,4 @@ var addScrape = function(req, res) {
 };
 
 module.exports.makerPage = makerPage;
-module.exports.make = addScrape;
+module.exports.make = makeDomo;

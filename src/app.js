@@ -10,7 +10,7 @@ var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 var url = require('url');
  
-var dbURL = process.env.MONGOHQ_URL || "mongodb://localhost/ScrapeMaker";
+var dbURL = process.env.MONGOHQ_URL || "mongodb://localhost/DomoMaker";
 
 var db = mongoose.connect(dbURL, function(err) {
     if(err) {
@@ -49,6 +49,7 @@ app.use(session({
         port: redisURL.port,
         pass: redisPASS 
     }),
+    secret: 'Domo Arigato',
     resave: true,
     saveUninitialized: true
 }));                             
