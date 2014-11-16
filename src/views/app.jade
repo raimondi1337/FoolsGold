@@ -7,6 +7,7 @@ block body
       img#logo(src="/assets/img/face.png", alt="face logo")
     .navlink
       a(href="/logout") Log out
+<<<<<<< HEAD
   section#addScrape
     form#scrapeForm(class="scrapeForm", name="scrapeForm", action="/maker", method="POST")
       label(for="name") URL: 
@@ -23,5 +24,29 @@ block body
             div.scrape
                 h3.scrapeURL URL: #{val.name}
                 h3.scrapeQuery Query: #{val.age}
+=======
+  section#makeDomo
+    form#domoForm(class="domoForm", name="domoForm", action="/maker", method="POST")
+      label(for="name") Name: 
+      input#domoName(type="text", name="name", placeholder="Domo Name")
+      label(for="age") Age: 
+      input#domoAge(type="text", name="age", placeholder="Domo Age")
+      a#makeDomoSubmit(class="makeDomoSubmit", href="#") Make Domo
+  section#domos
+    if !domos || domos.length == 0
+        div.domo
+            h3.emptyDomo No Domos yet
+    else
+        each val in domos
+            div.domo
+                img(class="domoFace", src="/assets/img/domoface.jpeg", alt="domo face")
+                h3.domoName Name: #{val.name}
+                h3.domoAge Age: #{val.age}
+  #domoMessage
+    img#speech(src="/assets/img/speech.png", alt="speech box")
+    h3
+      span#errorMessage
+    img#domo(src="assets/img/domo.png", alt="domo")
+>>>>>>> parent of 5e78c9b... playing with jade and stuff, probably broke everything
 block scripts
         script(src="/assets/maker.js")

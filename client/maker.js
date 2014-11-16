@@ -4,6 +4,7 @@ $(document).ready(function() {
 
     function handleError(message) {
         $("#errorMessage").text(message);
+        $("#domoMessage").animate({width:'toggle'},350);
     }
     
     function sendAjax(action, data) {
@@ -24,15 +25,21 @@ $(document).ready(function() {
         });        
     }
     
-    $("#addScrapeSubmit").on("click", function(e) {
+    $("#makeDomoSubmit").on("click", function(e) {
         e.preventDefault();
     
-        if($("#scrapeURL").val() == '' || $("#scrapeQuery").val() == '') {
-            handleError("All fields are required");
+        $("#domoMessage").animate({width:'hide'},350);
+    
+        if($("#domoName").val() == '' || $("#domoAge").val() == '') {
+            handleError("RAWR! All fields are required");
             return false;
         }
 
+<<<<<<< HEAD
         sendAjax($("#addScrape").attr("action"), $("#scrapeForm").serialize());
+=======
+        sendAjax($("#domoForm").attr("action"), $("#domoForm").serialize());
+>>>>>>> parent of 5e78c9b... playing with jade and stuff, probably broke everything
         
         return false;
     });
