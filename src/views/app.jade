@@ -7,22 +7,22 @@ block body
       img#logo(src="/assets/img/face.png", alt="face logo")
     .navlink
       a(href="/logout") Log out
-  section#makeDomo
-    form#domoForm(class="domoForm", name="domoForm", action="/maker", method="POST")
+  section#addScrape
+    form#scrapeForm(class="scrapeForm", name="scrapeForm", action="/maker", method="POST")
       label(for="name") URL: 
-      input#domoName(type="text", name="name", placeholder="URL")
-      label(for="age") Query: 
-      input#domoAge(type="text", name="age", placeholder="ie 6UL wheels")
-      a#makeDomoSubmit(class="makeDomoSubmit", href="#") Make Domo
-  section#domos
-    if !domos || domos.length == 0
-        div.domo
-            h3.emptyDomo No Domos yet
+      input#scrapeURL(type="text", name="url", placeholder="URL")
+      label(for="query") Query: 
+      input#scrapeQuery(type="text", name="query", placeholder="ie 6UL wheels")
+      a#addScrapeSubmit(class="addScrapeSubmit", href="#") Add Scrape
+  section#scrapes
+    if !scrapes || scrapes.length == 0
+        div.scrape
+            h3.emptyScrape No Scrapes yet
     else
-        each val in domos
-            div.domo
-                h3.domoName URL: #{val.name}
-                h3.domoAge Query: #{val.age}
+        each val in scrapes
+            div.scrape
+                h3.scrapeURL URL: #{val.name}
+                h3.scrapeQuery Query: #{val.age}
   #domoMessage
     img#speech(src="/assets/img/speech.png", alt="speech box")
     h3
