@@ -49,7 +49,6 @@ app.use(session({
         port: redisURL.port,
         pass: redisPASS 
     }),
-    secret: 'Domo Arigato',
     resave: true,
     saveUninitialized: true
 }));                             
