@@ -7,7 +7,7 @@ var setURL = function(url) {
     return _.escape(url).trim();
 };
 
-var ScrapeSchema = new mongoose.Schema({
+var DomoSchema = new mongoose.Schema({
     url: {
         type: String,
         required: true,
@@ -34,14 +34,14 @@ var ScrapeSchema = new mongoose.Schema({
 
 });
 
-ScrapeSchema.methods.toAPI = function() {
+DomoSchema.methods.toAPI = function() {
     return {
-        url: this.url,
-        query: this.query
+        name: this.url,
+        age: this.query
     };
 };
 
-ScrapeSchema.statics.findByOwner = function(ownerId, callback) {
+DomoSchema.statics.findByOwner = function(ownerId, callback) {
 
     var search = {
         owner: mongoose.Types.ObjectId(ownerId)
@@ -51,8 +51,8 @@ ScrapeSchema.statics.findByOwner = function(ownerId, callback) {
 };
 
 
-scrapeModel = mongoose.model('scrape', ScrapeSchema);
+DomoModel = mongoose.model('Domo', DomoSchema);
 
 
-module.exports.ScrapeModel = ScrapeModel;
-module.exports.ScrapeSchema = ScrapeSchema;
+module.exports.DomoModel = DomoModel;
+module.exports.DomoSchema = DomoSchema;
