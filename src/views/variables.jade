@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        //variables in Jade are put into scope by the res.render call.
+        //variables are passed in as JSON and are accessed by #{variableName}
+        //In this example, the pageData.title variable is used
+        //These variables will automatically be replaced with the given value when the page is rendered
+        title #{pageData.title}
+        link(rel="stylesheet", type="text/css", href="/assets/style.css")
+    body
+        p 
+            //The pipe character "|" defines plaintext. This allows you to write plain text on any line you want
+            //without having jade try to interpret it.
+            | Welcome #{pageData.user}
+            
+//Jade is a whitespace sensitive HTML template language
+//ELEMENTS###############################
+//Elements on the same level are in the same hierarchy in HTML
+//Elements indented further than the one above them are children of the one above
+//In the example above, the head tag is indented one level in from the html
+//This means that the head tag is contained by the HTML. 
+//The meta tag is then indented below the head that. That means the meta tag is a 
+//child tag of the head tag
+//ATTRIBUTES#############################
+//Attributes in Jade are passed into like elements like function parameters (comma separated)
+//Otherwise attributes look the same as they do in HTML
+//IDS####################################
+//In Jade Ids are tacked onto the element with the CSS/JS syntax. You just add them at the end
+//An h3 tag with the ID "main" would be h3#main
+//CLASSES################################
+//Classes in Jade are tacked onto the element with the CSS/JS syntax. You just add them at the end
+//An h3 tag with the class "underlined" would be h3.underlined
+//An h3 tag with both the classes "underlined" and "hidden" would be h3.underlined.hidden 
+//With the ID "main" this would look like h3#main.underlined.hidden

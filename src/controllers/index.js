@@ -1,45 +1,76 @@
-var path = require('path'); //path is a built-in node library to handle file system paths
-
-//There is no reason for the time here except as an example
-var time = new Date().getTime(); //Get the current time, just as an example 
-
-//function to handle requests to the main page
-//controller functions in Express receive the full HTTP request 
-//and a pre-filled out response object to send
+//function to return the main page
+//express functions always receive the request and response objects
 var main = function(req, res){
-    //path.resolve finds the absolute path for you
-    //send the main.page.html file using a resolved absolute path
-    //the res.sendFile action returns a file to a user
-    //res.sendFile response to the HTTP request so you can't send any more data through HTTP
-    //until the next request
-    res.sendFile(path.resolve(__dirname+'../../../client/mainpage.html'));
+    //res.render returns a view from the views folder. 
+    //The file extension is not needed because it has been defined by the view engine
+    //The file path is not needed because it was set up with the views in the app.js file
+    //This will automatically render out the index.jade page into HTML and return it
+    res.render('index');
 };
 
-//function to handle requests to the gallery page
-//controller functions in Express receive the full HTTP request 
-//and a pre-filled out response object to send
+//function to return the /gallery page
+//express functions always receive the request and response objects
 var getGallery = function(req, res) {
-    //path.resolve finds the absolute path for you
-    //send the gallery.html file using a resolved absolute path
-    //the res.sendFile action returns a file to a user
-    //res.sendFile response to the HTTP request so you can't send any more data through HTTP
-    //until the next request
-    res.sendFile(path.resolve(__dirname+'../../../client/gallery.html'));
+    //res.render returns a view from the views folder. 
+    //The file extension is not needed because it has been defined by the view engine
+    //The file path is not needed because it was set up with the views in the app.js file
+    //This will automatically render out the gallery.jade page into HTML and return it
+    res.render('gallery');
 };
 
-//function to handle post request to update the time
-//controller functions in Express receive the full HTTP request 
-//and a pre-filled out response object to send
-var updateTime = function(req, res) {
-    //update the time
-    time = new Date().getTime();
+//function to return the /extended page
+//express functions always receive the request and response objects
+var getExtended = function(req, res) {
     
-    //res.json returns json to the page. Since this sends back the data through HTTP
-    //you can't send any more data to this user until the next response
+    //json data to pass to a page as variables that can be used in Jade
+    var pageData = {
+        title: 'Extending Jade pages',
+        user: 'bro'
+    };
+
+    //res.render returns a view from the views folder. 
+    //The file extension is not needed because it has been defined by the view engine
+    //The file path is not needed because it was set up with the views in the app.js file
+    //This will automatically render out the extended.jade page into HTML and return it
+    /** The second parameter is the variables in JSON to pass into the template.
+        Any of these variables passed in will be accessible in the jade template.
+    **/
+    res.render('extended', {pageData: pageData});
+};
+
+//function to return the /variables page
+//express functions always receive the request and response objects
+var getVariablePage = function(req, res) {
+
+    var pageData = {
+        title: 'Jade variables',
+        user: 'friend'
+    };
+
+    //res.render returns a view from the views folder. 
+    //The file extension is not needed because it has been defined by the view engine
+    //The file path is not needed because it was set up with the views in the app.js file
+    //This will automatically render out the variables.jade page into HTML and return it
+    /** The second parameter is the variables in JSON to pass into the template.
+        Any of these variables passed in will be accessible in the jade template.
+    **/
+    res.render('variables', {pageData: pageData});
+};
+
+//function to return the /time POST
+//express functions always receive the request and response objects
+var updateTime = function(req, res) {
+    
+    var time = new Date().getTime();
+    
+    //res.json sends a JSON response back to the client
+    //This is often used for Ajax requests
     res.json({time: time});
 };
 
-//export the controller functions
+//export the public functions
 module.exports.main = main;
+module.exports.getVariablePage = getVariablePage;
+module.exports.getExtended = getExtended;
 module.exports.getGallery = getGallery;
 module.exports.updateTime = updateTime;

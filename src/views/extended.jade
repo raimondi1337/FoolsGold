@@ -1,0 +1,19 @@
+//going to extend base.jade
+
+//In Jade you can inhert from another Jade file and then add onto its properties
+//Once you inherit from another Jade file, you can replace parts of that Jade
+//file by defining blocks with the same name/id/class combo
+//That will override the parent's block of the same name
+extends ./base.jade
+
+//In this example we extend from base.jade
+//then override the parent's body block
+block body
+    p
+        //variables in Jade are put into scope by the res.render call.
+        //variables are passed in as JSON and are accessed by #{variableName}
+        //In this example, the pageData.user variable is used
+        //These variables will automatically be replaced with the given value when the page is rendered
+        //The pipe character "|" defines plaintext. This allows you to write plain text on any line you want
+        //without having jade try to interpret it.
+        | Welcome #{pageData.user}

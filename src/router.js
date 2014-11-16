@@ -1,27 +1,14 @@
-//import the controllers
-//This only specifies the folder name, which means it will automatically pull the index.js file
-var controllers = require('./controllers');
+//import the controller folder (automatically calls the index.js file)
+var controllers = require('./controllers'); 
 
-//function to attach routes
-var router = function(app) { //pass the express app in
-    
-    //app.VERB maps get requests to a middleware action
-    //For example
-    //app.get handles GET requests
-    //app.post handles POST requests
-    
-    //whenever someone goes to the site without a path (AKA the home page), call controllers.main
-    //For example www.webpage.com
-    app.get('/', controllers.main);
-    
-    //when someone goes to the /gallery page, call controllers.getGallery
-    //For example, www.webpage.com/gallery
-    app.get('/gallery', controllers.getGallery);
-    
-    //When someone POSTS to /time, call controllers.updateTime
-    //For example, a form submission to www.webpage.com/time 
-    app.post('/time', controllers.updateTime);
+//router function to set up the URL routes for an Express MVC app
+var router = function(app) {
+
+    app.get('/', controllers.main); //map the main site page to controllers.main
+    app.get('/variables', controllers.getVariablePage); //map the /variables page to controllers.getVariablePage
+    app.get('/extended', controllers.getExtended); //map the /extended page to controllers.getExtended
+    app.get('/gallery', controllers.getGallery); //map the /gallery page to controllers.getGallery
+    app.post('/time', controllers.updateTime); //map the /time page to controllers.updateTime
 };
 
-//export the router function
-module.exports = router;
+module.exports = router; //export the router as a public function
