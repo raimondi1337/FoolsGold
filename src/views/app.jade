@@ -20,10 +20,16 @@ block body
             h3.emptyDomo Bo Scrapes yet
     else
         each val in domos
-            div.domo
-                img(class="domoFace", src="/assets/img/domoface.jpeg", alt="domo face")
+            div.domo alt="domo face")
                 h3.scrapeURL URL: #{val.url}
                 h3.scrapeQuery Query: #{val.query}
+                ul#results
+                  li
+                    a(href="google.com") Item found
+                  li
+                    a(href="google.com") Item found
+                  li
+                    a(href="google.com") Item found
   #domoMessage
     img#speech(src="/assets/img/speech.png", alt="speech box")
     h3
