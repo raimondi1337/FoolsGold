@@ -36,8 +36,8 @@ var DomoSchema = new mongoose.Schema({
 
 DomoSchema.methods.toAPI = function() {
     return {
-        name: this.name,
-        age: this.age
+        name: this.url,
+        age: this.query
     };
 };
 
@@ -47,7 +47,7 @@ DomoSchema.statics.findByOwner = function(ownerId, callback) {
         owner: mongoose.Types.ObjectId(ownerId)
     };
 
-    return DomoModel.find(search).select("name age").exec(callback);
+    return DomoModel.find(search).select("url query").exec(callback);
 };
 
 
