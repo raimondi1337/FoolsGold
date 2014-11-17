@@ -220,11 +220,14 @@ h3.scrapeQuery {
 }
 
 #scrapesPane{
+    height: 100%;
+    background-color: #eeeeee;
     float: left;
 }
 
 #resultsPane{
     float: left;
     width: 70%;
+    height: 100%;
     background-color: #999999;
 }
