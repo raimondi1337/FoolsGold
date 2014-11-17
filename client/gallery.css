@@ -1,9 +1,12 @@
 #gallery{
 	background-color: #eeeeee;
+	display: inline-block;
 }
 
 #gallery.scrape{
 	background-color: #aaaaaa;
+	width: 25%;
+	margin: 12.5%;
 }
 
 #gallery.scrape.scrapeTitle{

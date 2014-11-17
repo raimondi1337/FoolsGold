@@ -41,15 +41,5 @@ $(document).ready(function() {
         
         return false;
     });
-
-    $(".result").hide();
-
-    $(".scrape").on("click", function(e) {
-        e.preventDefault();
-        console.log($(this).children(".result"));
-        $(this).children(".result").slideToggle( "fast", function() {
-            
-        });
-    });
     
 });
