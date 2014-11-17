@@ -10,7 +10,7 @@ var router = function(app) {
     app.post("/signup", mid.requiresSecure, mid.requiresLogout, controllers.Account.signup);
     app.get("/logout", mid.requiresLogin, controllers.Account.logout);
     app.get("/maker", mid.requiresLogin, controllers.Scrape.makerPage);
-    app.post("/maker", mid.requiresLogin, controllers.Scrape.makeScrape);
+    app.post("/maker", mid.requiresLogin, controllers.Scrape.make);
     app.get("/", mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 };
 

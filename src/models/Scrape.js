@@ -37,7 +37,7 @@ var ScrapeSchema = new mongoose.Schema({
 ScrapeSchema.methods.toAPI = function() {
     return {
         url: this.url,
-        query: this.query
+        query: this.query,
     };
 };
 
