@@ -16,11 +16,11 @@ block body
       a#makeScrapeSubmit(class="makeScrapeSubmit", href="#") Make new Scrape
   section#scrapes
     if !scrapes || scrapes.length == 0
-        div.domo
-            h3.emptyDomo Bo Scrapes yet
+        div.scrape
+            h3.emptyScrape No Scrapes yet
     else
         each val in scrapes
-            div.domo
+            div.scrape
                 h3.scrapeTitle Scraping #{val.url} for #{val.query}
                 ul.results
                   li.result
