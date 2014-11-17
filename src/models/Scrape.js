@@ -20,10 +20,6 @@ var ScrapeSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
-
-    results: {
-        type: Array
-    },
     
     owner: 	{
 		type: mongoose.Schema.ObjectId,
@@ -41,9 +37,7 @@ var ScrapeSchema = new mongoose.Schema({
 ScrapeSchema.methods.toAPI = function() {
     return {
         url: this.url,
-        results: this.results,
-        query: this.query,
-        _id: this._id
+        query: this.query
     };
 };
 
@@ -53,7 +47,7 @@ ScrapeSchema.statics.findByOwner = function(ownerId, callback) {
         owner: mongoose.Types.ObjectId(ownerId)
     };
 
-    return ScrapeModel.find(search).select("url results query").exec(callback);
+    return ScrapeModel.find(search).select("url query").exec(callback);
 };
 
 

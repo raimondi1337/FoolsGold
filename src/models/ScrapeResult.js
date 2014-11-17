@@ -15,11 +15,11 @@ var ScrapeResultSchema = new mongoose.Schema({
         set: setURL
     },
 
-    owner: 	{
-		type: mongoose.Schema.ObjectId,
-		required: true,
-		ref: 'Scrape'
-	},
+    owner:    {
+        type: mongoose.Schema.ObjectId,
+        required: true,
+        ref: 'Account'
+    },
     
     createdData: {
         type: Date,
