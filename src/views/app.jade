@@ -25,10 +25,5 @@ block body
                   h3.scrapeTitle Scraping: #{val}
                   h3.scrapeSubtitle For: #{val.query}
     section#resultsPane
-      ul.results
-        each scrape in scrapes
-          each item in scrape.results
-            li.result
-              Result: #{item.url}
 block scripts
         script(src="/assets/maker.js")

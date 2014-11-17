@@ -17,8 +17,6 @@ var makerPage = function(req, res) {
 };
 
 var makeScrape = function(req, res) {
-    var testResults = [{url: 'one'},{url: 'two'}];
-
     if(!req.body.name || !req.body.age) {
         return res.status(400).json({error: "Both URL and Query are required"});
     }
@@ -26,7 +24,6 @@ var makeScrape = function(req, res) {
     var ScrapeData = {
         url: req.body.url,
         query: req.body.query,
-        results: testResults,
         owner: req.session.account._id
     };
     
