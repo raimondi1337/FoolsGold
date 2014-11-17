@@ -4,7 +4,7 @@ var models = require('../models');
 var Scrape = models.Scrape;
 
 var makerPage = function(req, res) {
-    var data;
+    req.data;
     
     Scrape.ScrapeModel.findByOwner(req.session.account._id, function(err, docs) {
 
@@ -13,7 +13,7 @@ var makerPage = function(req, res) {
             return res.status(400).json({error:'An error occurred'}); 
         }
 
-        data.scrapes=docs;
+        req.data.scrapes=docs;
     });
 
     ScrapeResult.ScrapeResultModel.findByOwner(req.session.account._id, function(err, docs) {
@@ -23,10 +23,10 @@ var makerPage = function(req, res) {
             return res.status(400).json({error:'An error occurred'}); 
         }
 
-        data.results=docs;
+        req.data.results=docs;
     });
 
-    res.render('app', data);
+    res.render('app', req.data);
 };
 
 //create a data object
