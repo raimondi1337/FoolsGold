@@ -29,6 +29,7 @@ $(document).ready(function() {
     
     $("#makeScrapeSubmit").on("click", function(e) {
         e.preventDefault();
+        console.log("clicked");
     
         $("#domoMessage").animate({width:'hide'},350);
     
@@ -37,8 +38,9 @@ $(document).ready(function() {
             return false;
         }
 
+        console.log("starting ajax...");
         sendAjax($("#scrapeForm").attr("action"), $("#scrapeForm").serialize());
-        
+        console.log("done with ajax");
         return false;
     });
     
