@@ -47,7 +47,7 @@ $(document).ready(function() {
     $(".scrape").on("click", function(e) {
         e.preventDefault();
 
-        $("this > .scrapeResults").children().slideToggle( "fast" );
+        $(this).children(".scrapeResults").slideToggle( "fast" );
     });
     
 });
