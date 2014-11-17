@@ -16,19 +16,18 @@ block body
       a#makeScrapeSubmit(class="makeScrapeSubmit", href="#") Make new Scrape
   section#scrapes
     if !scrapes || scrapes.length == 0
-        div.scrape
-            h3.emptyScrape No Scrapes yet
+        div.domo
+            h3.emptyDomo Bo Scrapes yet
     else
         each val in scrapes
-            div.scrape
+            div.domo
                 h3.scrapeTitle Scraping #{val.url} for #{val.query}
                 ul.results
-                  each item in #{val.results}
-                    li.result
-                      a(href="http://www.google.com") Item found
-                    li.result
-                      a(href="http://www.google.com") Item found
-                    li.result
-                      a(href="http://www.google.com") Item found
+                  li.result
+                    a(href="google.com") Item found
+                  li.result
+                    a(href="google.com") Item found
+                  li.result
+                    a(href="google.com") Item found
 block scripts
         script(src="/assets/maker.js")
