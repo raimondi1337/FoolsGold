@@ -41,5 +41,11 @@ $(document).ready(function() {
         
         return false;
     });
+
+    $(".scrape").on("click", function(e) {
+        e.preventDefault();
+
+        $(this > ".scrapeResults").children().slideToggle( "fast" );
+    });
     
 });
