@@ -9,12 +9,12 @@ var router = function(app) {
     app.get("/signup", mid.requiresSecure,mid.requiresLogout, controllers.Account.signupPage);
     app.post("/signup", mid.requiresSecure, mid.requiresLogout, controllers.Account.signup);
     app.get("/logout", mid.requiresLogin, controllers.Account.logout);
-    app.get("/gallery", mid.requiresLogin, controllers.Scrape.makerPage);
-    app.post("/gallery", mid.requiresLogin, controllers.Scrape.make);
-    app.get("/list", mid.requiresLogin, controllers.Scrape.makerPage);
-    app.post("/list", mid.requiresLogin, controllers.Scrape.make);
-    app.get("/thumb", mid.requiresLogin, controllers.Scrape.makerPage);
-    app.post("/thumb", mid.requiresLogin, controllers.Scrape.make);
+    app.get("/gallery", mid.requiresLogin, controllers.ScrapeGallery.makerPage);
+    app.post("/gallery", mid.requiresLogin, controllers.ScrapeGallery.make);
+    //app.get("/list", mid.requiresLogin, controllers.ScrapeList.makerPage);
+    //app.post("/list", mid.requiresLogin, controllers.ScrapeList.make);
+    //app.get("/thumb", mid.requiresLogin, controllers.ScrapeThumb.makerPage);
+    //app.post("/thumb", mid.requiresLogin, controllers.ScrapeThumb.make);
     app.get("/", mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 };
 
