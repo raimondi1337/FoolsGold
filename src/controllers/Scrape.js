@@ -53,7 +53,7 @@ var make = function(req, res) {
         });
 
     //if the controller is sent result, make a scrapeResult model
-    } else if(req.body.result){
+    } else /*if(req.body.result){
         data = {
             result: req.body.result;
         };
@@ -70,7 +70,7 @@ var make = function(req, res) {
             });
 
     //if the controller is sent anything else, blow up
-    } else {
+    } else */{
         return res.status(400).json({error: "Bad data sent"});
     }    
 };
