@@ -26,8 +26,7 @@ block body
     else
         each val in scrapes
             div.scrape
-              h3.scrapeTitle Scraping: #{val.url}
-              h3.scrapeSubtitle For: #{val.query}
+              h3.scrapeTitle Scraping: #{val.url} For: #{val.query}
               each item in val.results
                 div.result #{item.url}
 block scripts
