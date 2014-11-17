@@ -61,4 +61,10 @@ $(document).ready(function() {
 
         return false;
     });
+
+    /*$(".scrape").on("click", function(e) {
+        e.preventDefault();
+
+        $(".results:nth-child()").
+    });*/
 });
