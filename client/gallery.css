@@ -6,7 +6,7 @@
 #gallery .scrape{
 	background-color: #aaaaaa;
 	width: 25%;
-	margin: 12.5%;
+	display: inline-block;
 }
 
 #gallery.scrape.scrapeTitle{
