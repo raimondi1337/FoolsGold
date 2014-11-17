@@ -37,9 +37,6 @@ $(document).ready(function() {
             return false;
         }
 
-        console.log($("#scrapeForm").attr("action"));
-        console.log($("#scrapeForm").serialize());
-
         sendAjax($("#scrapeForm").attr("action"), $("#scrapeForm").serialize());
         
         return false;
