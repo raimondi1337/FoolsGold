@@ -1,0 +1,11 @@
+#list{
+	background-color: #eeeeee;
+	width: 100%;
+}
+
+#list .scrape{
+	background-color: #aaaaaa;
+	width: 100%;
+	margin: 1%;
+	padding: 1.5%;
+}
