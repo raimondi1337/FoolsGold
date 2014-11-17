@@ -15,11 +15,11 @@ block body
       input#scrapeQuery(type="text", name="query", placeholder="ie 6UL wheels")
       a#makeScrapeSubmit(class="makeScrapeSubmit", href="#") Make new Scrape
   section#scrapes
-    if !domos || domos.length == 0
+    if !scrapes || scrapes.length == 0
         div.domo
             h3.emptyDomo Bo Scrapes yet
     else
-        each val in domos
+        each val in scrapes
             div.domo
                 h3.scrapeTitle Scraping #{val.url} for #{val.query}
                 ul.results
