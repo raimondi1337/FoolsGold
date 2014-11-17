@@ -10,15 +10,13 @@ block body
       a(href="/logout") Log out
     .navlink
       a(href="") Gallery
-      
   section#makeScrape
-    form#scrapeForm(class="scrapeForm", name="scrapeForm", action="/maker", method="POST")
+    form#scrapeForm(class="scrapeForm", name="scrapeForm", action="/gallery", method="POST")
       label(for="url") URL: 
       input#scrapeURL(type="text", name="url", placeholder="URL")
       label(for="query") Query: 
       input#scrapeQuery(type="text", name="query", placeholder="ie 6UL wheels")
       a#makeScrapeSubmit(class="makeScrapeSubmit", href="#") Make new Scrape
-
   section#gallery
     if !scrapes || scrapes.length == 0
         div.scrape
@@ -30,6 +28,5 @@ block body
                 h3.scrapeSubtitle For: #{val.query}
                 each item in val.results
                   div.result #{item.url}
-
 block scripts
         script(src="/assets/maker.js")
