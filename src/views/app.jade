@@ -29,6 +29,7 @@ block body
         each val in scrapes
           each item in val.results
             li.result
+              #{item.url}
 
 block scripts
         script(src="/assets/maker.js")
