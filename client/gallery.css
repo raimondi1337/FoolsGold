@@ -7,18 +7,12 @@
 
 #gallery .scrape{
 	background-color: #aaaaaa;
-	width: 25%;
+	width: 20%;
+	margin: 1%;
+	padding: 1.5%;
 	display: inline-block;
 }
 
-#gallery.scrape.scrapeTitle{
-	color:white;
-}
-
-#gallery.scrape.scrapeSubtitle{
-	color:white;
-}
-
-#gallery.scrape.result{
-	color:white;
+#gallery .scrape .picture{
+	width:100%;
 }

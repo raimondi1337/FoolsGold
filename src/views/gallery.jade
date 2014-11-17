@@ -24,9 +24,10 @@ block body
     else
         each val in scrapes
             div.scrape
-                h3.scrapeTitle Scraping: #{val.url}
-                h3.scrapeSubtitle For: #{val.query}
-                each item in val.results
-                  div.result #{item.url}
+              img.picture(src="/assets/img/icon.png", alt="logo")
+              h3.scrapeTitle Scraping: #{val.url}
+              h3.scrapeSubtitle For: #{val.query}
+              each item in val.results
+                div.result #{item.url}
 block scripts
         script(src="/assets/maker.js")
