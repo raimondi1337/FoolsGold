@@ -25,7 +25,7 @@ var makeScrape = function(req, res) {
     var scrapeData = {
         url: req.body.url,
         query: req.body.query,
-        results: ['http://supermotojunkie.com/forumdisplay.php?72-Bikes', 'http://supermotojunkie.com/forumdisplay.php?72-Bikes'],
+        results: req.body.results,
         owner: req.session.account._id
     };
     
