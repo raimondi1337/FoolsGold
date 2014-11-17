@@ -20,6 +20,10 @@ var ScrapeSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
+
+    results: {
+        type: Array
+    },
     
     owner: 	{
 		type: mongoose.Schema.ObjectId,
