@@ -42,6 +42,8 @@ $(document).ready(function() {
         return false;
     });
 
+    $(".scrapeResults").hide();
+
     $(".scrape").on("click", function(e) {
         e.preventDefault();
 
