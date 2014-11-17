@@ -46,8 +46,8 @@ $(document).ready(function() {
 
     $(".scrape").on("click", function(e) {
         e.preventDefault();
-        console.log($(this).children(".scrapeResults"));
-        $(this).children(".scrapeResults").slideToggle( "fast" );
+        console.log($(this).children(".result"));
+        $(this).children(".result").slideToggle( "fast" );
     });
     
 });
