@@ -1,18 +1,24 @@
 var mongoose = require('mongoose');
 var _ = require('underscore');
 
-var ScrapeResultModel;
+var ScrapeModel;
 
 var setURL = function(url) {
     return _.escape(url).trim();
 };
 
-var ScrapeResultSchema = new mongoose.Schema({
+var ScrapeSchema = new mongoose.Schema({
     url: {
         type: String,
         required: true,
         trim: true,
         set: setURL
+    },
+    
+    query: {
+        type: String,
+        trim: true,
+        required: true
     },
     
     owner: 	{
@@ -28,24 +34,25 @@ var ScrapeResultSchema = new mongoose.Schema({
 
 });
 
-ScrapeResultSchema.methods.toAPI = function() {
+ScrapeSchema.methods.toAPI = function() {
     return {
-        url: this.url
+        url: this.url,
+        query: this.query
     };
 };
 
-ScrapeResultSchema.statics.findByOwner = function(ownerId, callback) {
+ScrapeSchema.statics.findByOwner = function(ownerId, callback) {
 
     var search = {
         owner: mongoose.Types.ObjectId(ownerId)
     };
 
-    return ScrapeResultModel.find(search).select("url").exec(callback);
+    return ScrapeModel.find(search).select("url query").exec(callback);
 };
 
 
-ScrapeResultModel = mongoose.model('ScrapeResult', ScrapeResultSchema);
+ScrapeModel = mongoose.model('Scrape', ScrapeSchema);
 
 
-module.exports.ScrapeResultModel = ScrapeResultModel;
-module.exports.ScrapeResultSchema = ScrapeResultSchema;
+module.exports.ScrapeModel = ScrapeModel;
+module.exports.ScrapeSchema = ScrapeSchema;
