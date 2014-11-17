@@ -20,16 +20,16 @@ block body
           div.scrape
               h3.emptyScrape No Scrapes yet
       else
-          each scrape in scrapes
+          each val in scrapes
               div.scrape
-                  h3.scrapeTitle Scraping: #{scrape.url}
-                  h3.scrapeSubtitle For: #{scrap.query}
+                  h3.scrapeTitle Scraping: #{val.url}
+                  h3.scrapeSubtitle For: #{val.query}
     section#resultsPane
       ul.results
         each scrape in scrapes
-          each val in scrape.result
+          each item in scrape.result
             li.result
-              Result: #{val.url}
+              Result: #{item.url}
 
 block scripts
         script(src="/assets/maker.js")
