@@ -20,10 +20,6 @@ var ScrapeSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
-
-    results: {
-        type: Array
-    },
     
     owner: 	{
 		type: mongoose.Schema.ObjectId,
@@ -41,7 +37,6 @@ var ScrapeSchema = new mongoose.Schema({
 ScrapeSchema.methods.toAPI = function() {
     return {
         url: this.url,
-        results: this.results,
         query: this.query
     };
 };
