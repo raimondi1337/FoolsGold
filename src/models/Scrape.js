@@ -47,7 +47,7 @@ ScrapeSchema.statics.findByOwner = function(ownerId, callback) {
         owner: mongoose.Types.ObjectId(ownerId)
     };
 
-    return ScrapeModel.find(search).select("url results query").exec(callback);
+    return ScrapeModel.find(search).select("url query").exec(callback);
 };
 
 
