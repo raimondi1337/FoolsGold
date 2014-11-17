@@ -48,7 +48,6 @@ nav:nth-child(1) {
 }
 
 .scrapeForm {
-    border: 2px solid #338acc;
     height: 50px;
     width: 100%;
     margin-top:0px;
@@ -180,30 +179,13 @@ nav:nth-child(1) {
     font-style: italic;
 }
 
-#scrape {
-    z-index: 225;
-    margin-top: -20px;
-    margin-left: 135px;
-    height: 450px;
-    width: 300px;
-    -ms-transform: rotate(330deg);
-    -webkit-transform: rotate(330deg); 
-    transform: rotate(330deg);
-}
-
 #scrapes {
     width: 40%;
-    min-width: 400px;
-    border: 2px solid #55acee;
-    border-radius: 4px;
-    margin: 0 auto;
-    margin-top: 100px;
 }
 
 .scrape {
     width: 100%;
-    background-color: #111111;
-    padding: 10px;
+    background-color: #dddddd;
 }
 
 .scrape:hover {
@@ -236,12 +218,4 @@ h3.scrapeQuery {
     font-weight: bold;
     padding-right: 40px;
     font-size: 1.5em;
-}
-
-.scrape:first-child {
-    margin-top: 10px;
-}
-
-.scrape:last-child {
-    margin-bottom:10px;
 }
