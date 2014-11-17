@@ -17,17 +17,14 @@ block body
   section#scrapes
     if !scrapes || scrapes.length == 0
         div.domo
-            h3.emptyDomo Bo Scrapes yet
+            h3.emptyDomo No Scrapes yet
     else
         each val in scrapes
-            div.domo
+            div.scrape
                 h3.scrapeTitle Scraping #{val.url} for #{val.query}
                 ul.results
-                  li.result
-                    a(href="google.com") Item found
-                  li.result
-                    a(href="google.com") Item found
-                  li.result
-                    a(href="google.com") Item found
+                  each item in #{val.results}
+                    li.result
+                      a(href='#{item}') #item
 block scripts
         script(src="/assets/maker.js")
