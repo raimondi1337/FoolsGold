@@ -42,7 +42,8 @@ ScrapeSchema.methods.toAPI = function() {
     return {
         url: this.url,
         results: this.results,
-        query: this.query
+        query: this.query,
+        _id: this._id
     };
 };
 
