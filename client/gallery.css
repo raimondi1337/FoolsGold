@@ -1,6 +1,8 @@
 #gallery{
 	background-color: #eeeeee;
 	display: inline-block;
+	width: 100%;
+	height: 100%;
 }
 
 #gallery .scrape{

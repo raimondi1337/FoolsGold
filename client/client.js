@@ -8,7 +8,6 @@ $(document).ready(function() {
     }
     
     function sendAjax(action, data) {
-        console.log("ajax starting");
         $.ajax({
             cache: false,
             type: "POST",
@@ -16,17 +15,14 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(result, status, xhr) {
-                console.log("success begin");
                 $("#domoMessage").animate({width:'hide'},350);
+
                 window.location = result.redirect;
-                console.log("success end");
             },
             error: function(xhr, status, error) {
-                console.log("error begin");
-                var messageObj = JSON.parse(xhr.responseText); 
-
+                var messageObj = JSON.parse(xhr.responseText);
+            
                 handleError(messageObj.error);
-                console.log("error end");
             }
         });        
     }
