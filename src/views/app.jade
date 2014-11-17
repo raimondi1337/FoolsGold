@@ -27,7 +27,8 @@ block body
     section#resultsPane
       ul.results
         each val in scrapes
-          li.result
+          each item in val.results
+            li.result
 
 block scripts
         script(src="/assets/maker.js")
