@@ -13,7 +13,7 @@ block body
       a(href="/list") List
     .navlink
       a(href="/thumb") Thumb
-      
+
   section#makeScrape
     form#scrapeForm(class="scrapeForm", name="scrapeForm", action="/maker", method="POST")
       label(for="url") URL: 
@@ -21,7 +21,8 @@ block body
       label(for="query") Query: 
       input#scrapeQuery(type="text", name="query", placeholder="ie 6UL wheels")
       a#makeScrapeSubmit(class="makeScrapeSubmit", href="#") Make new Scrape
-  section#content
+
+  section#thumb
     if !scrapes || scrapes.length == 0
         div.scrape
             h3.emptyScrape No Scrapes yet

@@ -1,0 +1,19 @@
+#gallery{
+	background-color: #eeeeee;
+}
+
+#gallery.scrape{
+	background-color: #aaaaaa;
+}
+
+#gallery.scrape.scrapeTitle{
+	color:white;
+}
+
+#gallery.scrape.scrapeSubtitle{
+	color:white;
+}
+
+#gallery.scrape.result{
+	color:white;
+}
