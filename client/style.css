@@ -179,7 +179,7 @@ nav:nth-child(1) {
     font-style: italic;
 }
 
-#scrapes {
+#scrapesPane {
     width: 30%;
 }
 
@@ -217,4 +217,9 @@ h3.scrapeQuery {
     font-weight: bold;
     padding-right: 40px;
     font-size: 1.5em;
+}
+
+#resultsPane{
+    width: 70%;
+    background-color: #999999;
 }
