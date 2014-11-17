@@ -17,7 +17,7 @@ var makerPage = function(req, res) {
 };
 
 var makeScrape = function(req, res) {
-    if(!req.body.name || !req.body.age) {
+    if(!req.body.url || !req.body.query) {
         return res.status(400).json({error: "Both URL and Query are required"});
     }
     
