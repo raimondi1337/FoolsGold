@@ -21,8 +21,7 @@ block body
     else
         each val in domos
             div.domo
-                h3.scrapeURL URL: #{val.url}
-                h3.scrapeQuery Query: #{val.query}
+                h3.scrapeTitle Scraping #{val.url} for #{val.query}
                 ul.results
                   li.result
                     a(href="google.com") Item found
