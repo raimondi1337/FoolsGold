@@ -31,6 +31,6 @@ block body
               img.picture(src="/assets/img/icon.png", alt="logo")
               h3.scrapeTitle Scraping: #{val.url} For: #{val.query}
               each item in val.results
-                div.result #{item.url}
+                a.result(href="#{item.url}") Result
 block scripts
         script(src="/assets/maker.js")
