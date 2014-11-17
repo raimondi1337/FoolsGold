@@ -1,11 +1,21 @@
 #list{
 	background-color: #eeeeee;
 	width: 100%;
+	display: inline-block;
 }
 
 #list .scrape{
 	background-color: #aaaaaa;
-	width: 95%;
-	margin: 1%;
-	padding: 1.5%;
+	width: 98%;
+	margin: .5%;
+	padding: 0 1.5%;
+	display: inline-block;
+}
+
+#list h3{
+	display: inline-block;
+}
+
+#list .result{
+	display: inline-block;
 }
