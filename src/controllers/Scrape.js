@@ -24,6 +24,7 @@ var makeScrape = function(req, res) {
     var scrapeData = {
         url: req.body.url,
         query: req.body.query,
+        results: [{url: 'one'},{url: 'two'}],
         owner: req.session.account._id
     };
     
