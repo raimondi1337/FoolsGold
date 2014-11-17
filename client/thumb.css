@@ -13,9 +13,18 @@
 
 #thumb .scrape .picture{
 	height: 100%;
-	float: left;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 #thumb .scrape h3{
-	float: left;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 25px;
+}
+
+#thumb .scrape a.result{
+	margin-left: 25px;
+	display: inline-block;
+	vertical-align: middle;
 }

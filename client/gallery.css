@@ -16,3 +16,7 @@
 #gallery .scrape .picture{
 	width:100%;
 }
+
+#gallery .scrape .result{
+	margin-right: 10px;
+}
