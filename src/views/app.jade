@@ -16,7 +16,7 @@ block body
       a#makeScrapeSubmit(class="makeScrapeSubmit", href="#") Make new Scrape
   section#content
     section#scrapesPane
-      if !data.scrapes || data.scrapes.length == 0
+      if !scrapes || scrapes.length == 0
           div.scrape
               h3.emptyScrape No Scrapes yet
       else
