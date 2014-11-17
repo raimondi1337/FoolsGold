@@ -24,8 +24,8 @@ block body
               div.scrape
                   h3.scrapeTitle Scraping: #{val.url}
                   h3.scrapeSubtitle For: #{val.query}
-                    each item in val.results
-                      div.result #{val.url}
+                  each item in val.results
+                    div.result #{val.url}
 
 block scripts
         script(src="/assets/maker.js")
