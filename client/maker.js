@@ -46,7 +46,7 @@ $(document).ready(function() {
 
     $(".scrape").on("click", function(e) {
         e.preventDefault();
-        console.log("click");
+        console.log($(this).children(".scrapeResults"));
         $(this).children(".scrapeResults").slideToggle( "fast" );
     });
     
