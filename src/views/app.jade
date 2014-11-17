@@ -29,6 +29,6 @@ block body
         each scrape in scrapes
           each item in scrape.results
             li.result
-              Result: #{item}
+              Result: #{item.url}
 block scripts
         script(src="/assets/maker.js")
