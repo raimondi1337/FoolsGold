@@ -21,7 +21,7 @@ var makeScrape = function(req, res) {
         return res.status(400).json({error: "Both URL and Query are required"});
     }
     
-    var ScrapeData = {
+    var scrapeData = {
         url: req.body.url,
         query: req.body.query,
         owner: req.session.account._id
