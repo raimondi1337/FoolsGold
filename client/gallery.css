@@ -3,7 +3,7 @@
 	display: inline-block;
 }
 
-#gallery.scrape{
+#gallery .scrape{
 	background-color: #aaaaaa;
 	width: 25%;
 	margin: 12.5%;

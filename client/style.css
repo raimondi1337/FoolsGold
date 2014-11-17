@@ -10,6 +10,7 @@ html, body {
     height: 40px;
     width: 40;
     padding-top: 5px;
+    margin-left: 25px;
     float:left;
     border-radius: 8px;
 }
@@ -18,10 +19,6 @@ nav {
     width: 100%;
     height: 50px;
     background-color: #55eeac;
-}
-
-nav:nth-child(1) {
-    padding-left: 25px;
 }
 
 .navlink {
@@ -50,13 +47,14 @@ nav:nth-child(1) {
 .scrapeForm {
     width: 100%;
     margin-top:0px;
+    padding-bottom: 10px;
     background-color: #44dd9b;
 }
 
 .scrapeForm label {
     display: inline-block;
     width: 75px;
-    margin-left: 10px;
+    margin-left: 25px;
     font-size: 1.2em;
     float: left;
     color: black;
@@ -66,13 +64,14 @@ nav:nth-child(1) {
     float:left;
 }
 
+
 .makeScrapeSubmit {
     transition: background-color 0.4s ease;
     display: inline;
     margin-top: 14px;
     font-size: 1.2em;
     width: 90px;
-    background-color: #55eeac;
+    background-color: #55b9ac;
     border-radius: 2px;
     padding: 3px 0px;
     color: black;

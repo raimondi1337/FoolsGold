@@ -12,7 +12,7 @@ block body
       a(href="#") Gallery
       
   section#makeScrape
-    form#scrapeForm(class="scrapeForm", name="scrapeForm", action="/maker", method="POST")
+    form#scrapeForm(class="scrapeForm", name="scrapeForm", action="/script", method="POST")
       label(for="url") URL: 
       input#scrapeURL(type="text", name="url", placeholder="URL")
       label(for="query") Query: 
@@ -32,4 +32,4 @@ block body
                   div.result #{item.url}
 
 block scripts
-        script(src="/assets/maker.js")
+        script(src="/assets/script.js")
