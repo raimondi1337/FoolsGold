@@ -234,4 +234,5 @@ h3.scrapeQuery {
 
 .result{
     border-style: solid;
+    border-width: 1px;
 }
