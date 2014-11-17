@@ -42,12 +42,14 @@ $(document).ready(function() {
         return false;
     });
 
-    $(".scrapeResults").hide();
+    $(".result").hide();
 
     $(".scrape").on("click", function(e) {
         e.preventDefault();
         console.log($(this).children(".result"));
-        $(this).children(".result").slideToggle( "fast" );
+        $(this).children(".result").slideToggle( "fast", function() {
+            
+        });
     });
     
 });
