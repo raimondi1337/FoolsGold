@@ -1,7 +1,7 @@
 extends ./base.jade
 block append style
     link(rel="stylesheet", type="text/css", href="/assets/style.css")
-    link(rel="stylesheet", type="text/css", href="/assets/gallery.css")
+    link(rel="stylesheet", type="text/css", href="/assets/thumb.css")
 block body
   nav
     a(href="/login")
@@ -15,13 +15,13 @@ block body
     .navlink
       a(href="/thumb") Thumb
   section#makeScrape
-    form#scrapeForm(class="scrapeForm", name="scrapeForm", action="/gallery", method="POST")
+    form#scrapeForm(class="scrapeForm", name="scrapeForm", action="/list", method="POST")
       label(for="url") URL: 
       input#scrapeURL(type="text", name="url", placeholder="URL")
       label(for="query") Query: 
       input#scrapeQuery(type="text", name="query", placeholder="ie 6UL wheels")
       a#makeScrapeSubmit(class="makeScrapeSubmit", href="#") Make new Scrape
-  section#gallery
+  section#thumb
     if !scrapes || scrapes.length == 0
         div.scrape
             h3.emptyScrape No Scrapes yet
@@ -29,8 +29,7 @@ block body
         each val in scrapes
             div.scrape
               img.picture(src="/assets/img/icon.png", alt="logo")
-              h3.scrapeTitle Scraping: #{val.url}
-              h3.scrapeSubtitle For: #{val.query}
+              h3.scrapeTitle Scraping: #{val.url} For: #{val.query}
               each item in val.results
                 div.result #{item.url}
 block scripts
