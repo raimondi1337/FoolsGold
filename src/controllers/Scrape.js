@@ -1,7 +1,7 @@
 var _ = require('underscore');
 var models = require('../models');
 
-var Scrape = models.Scrape;
+var Scrape = models.ScrapeModel;
 
 var makerPage = function(req, res) {
     
