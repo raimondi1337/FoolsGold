@@ -47,14 +47,14 @@ $(document).ready(function() {
     $(".scrape").on("click", function(e) {
         var results = $(".result");
         var scrape=this;
-        console.log("clicked");
-        for (var i=0; i<results.length; i++) {
+        console.log(scrape);
+        /*for (var i=0; i<results.length; i++) {
             console.log(i);
             var scrapeClass=scrape.attr('class');
             var resultClass=result[i].attr('class').split(/\s+/);
-            //console.log(scrapeClass);
-            //console.log(resultClass);
-        }
+            console.log(scrapeClass);
+            console.log(resultClass);
+        }*/
     });
 
     console.log($(".scrape"));
