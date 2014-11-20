@@ -48,7 +48,7 @@ $(document).ready(function() {
         var results = $(".result");
         var scrape=this;
         for (var i=0; i<results.length; i++) {
-            console.log($(this).attr('class'));.split(/\s+/);
+            console.log($(this).attr('class').split(/\s+/));
         }
     });
 
