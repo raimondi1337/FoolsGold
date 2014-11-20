@@ -51,8 +51,10 @@ $(document).ready(function() {
             var scrapeClasses = $(this).attr('class').split(/\s+/);
             if($(results[i]).hasClass(scrapeClasses[1])){
                 $(results[i]).hide();
+                console.log('hide');
             } else {
                 $(results[i]).show();
+                console.log('show')''
             }
         }
     });
