@@ -54,5 +54,7 @@ $(document).ready(function() {
             console.log(resultClass);
         };
     });
+
+    console.log($(".scrape"));
     
 });
