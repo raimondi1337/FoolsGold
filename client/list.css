@@ -2,13 +2,13 @@
 	background-color: #eeeeee;
 	width: 50%;
 	display: inline-block;
+	text-align: center;
 }
 
 #scrapeList .scrape{
 	background-color: #aaaaaa;
-	width: 98%;
-	margin: .5%;
-	padding: 0 1.5%;
+	width: 100%;
+	margin: .5% 1%;
 	display: inline-block;
 }
 
