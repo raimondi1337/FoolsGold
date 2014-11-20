@@ -38,6 +38,7 @@ form{
 	width: 98%;
 	margin: .5% 1%;
 	display: inline-block;
+	display: none;
 }
 
 #resultList h3{

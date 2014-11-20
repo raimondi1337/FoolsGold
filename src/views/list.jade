@@ -40,7 +40,7 @@ block body
       else
           each val in scrapes
             each item in val.results
-              div(class="#{val.url}")
+              div(class="#{val.url}") 
                 a(href="#{item.url}") Result
 block scripts
         script(src="/assets/maker.js")
