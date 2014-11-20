@@ -1,6 +1,11 @@
 form{
 	margin: 0;
 }
+
+#content{
+	display: inline-block;
+}
+
 #scrapeList{
 	background-color: #eeeeee;
 	width: 50%;
