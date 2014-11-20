@@ -54,7 +54,7 @@ $(document).ready(function() {
                 console.log('hide');
             } else {
                 $(results[i]).show();
-                console.log('show')''
+                console.log('show');
             }
         }
     });
