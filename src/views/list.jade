@@ -37,6 +37,6 @@ block body
         each val in scrapes
           each item in val.results
             div.Result
-              a.result(href="#{item.url}") Result
+              a(class="#{val.url}" href="#{item.url}") Result
 block scripts
         script(src="/assets/maker.js")
