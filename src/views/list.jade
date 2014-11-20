@@ -27,20 +27,20 @@ block body
           div.scrape
               h3.emptyScrape No Scrapes yet
       else
-          each val in scrapes
-              div.scrape
+          each scrape in scrapes
+              div(class="scrape #{scrape.url}")
                 p.scrapeURL Scraping:
-                a(href="#{val.url}") #{val.url}
+                a(href="#{scrape.url}") #{scrape.url}
                 p.scrapeQuery For:
-                a(href="#") #{val.query}
+                a(href="#") #{scrape.query}
     section#resultList
       if !scrapes || scrapes.length == 0
           div.result
               h3.emptyResult No Results yet
       else
-          each val in scrapes
-            each item in val.results
-              div(class="results #{val.url}") 
-                a(href="#{item.url}") Result
+          each scrape in scrapes
+            each result in scrape.results
+              div(class="results #{scrape.url}") 
+                a(href="#{result.url}") Result
 block scripts
         script(src="/assets/maker.js")
