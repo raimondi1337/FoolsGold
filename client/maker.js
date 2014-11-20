@@ -50,7 +50,7 @@ $(document).ready(function() {
         for (var i=0; i<results.length; i++) {
             var scrapeClasses = $(this).attr('class').split(/\s+/);
             console.log(scrapeClasses);
-            var resultClasses = $(result[i]).attr('class').split(/\s+/);
+            var resultClasses = $(results[i]).attr('class').split(/\s+/);
             console.log(resultClasses);
         }
     });
