@@ -29,16 +29,14 @@ block body
         each val in scrapes
             div.scrape
               h3.scrapeTitle Scraping: #{val.url} For: #{val.query}
-              each item in val.results
-                a.result(href="#{item.url}") Result
   section#resultList
     if !scrapes || scrapes.length == 0
-        div.scrape
-            h3.emptyScrape No Results yet
+        div.result
+            h3.emptyResult No Results yet
     else
         each val in scrapes
           each item in val.results
-            div.scrape
+            div.Result
               a.result(href="#{item.url}") Result
 block scripts
         script(src="/assets/maker.js")
