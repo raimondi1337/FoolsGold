@@ -49,11 +49,10 @@ $(document).ready(function() {
         var scrape=this;
         for (var i=0; i<results.length; i++) {
             var scrapeClasses = $(this).attr('class').split(/\s+/);
-            console.log(scrapeClasses);
             if($(results[i]).hasClass(scrapeClasses[1])){
-                console.log("match");
+                $(results[i]).hide();
             } else {
-                console.log("not match");
+                $(results[i]).show();
             }
         }
     });
