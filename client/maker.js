@@ -45,7 +45,7 @@ $(document).ready(function() {
     });
 
     $(".scrape").on("click", function(e){
-        var results = $(".result";
+        var results = $(".result");
 
         for (var i = results.length; i<0; i++) {
             var scrapeClass=this.attr('class').split(/\s+/);
