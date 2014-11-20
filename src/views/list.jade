@@ -40,7 +40,7 @@ block body
       else
           each scrape in scrapes
             each result in scrape.results
-              div(class="results #{scrape.url}") 
+              div(class="result #{scrape.url}") 
                 a(href="#{result.url}") Result
 block scripts
         script(src="/assets/maker.js")
