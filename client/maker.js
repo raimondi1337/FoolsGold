@@ -49,7 +49,7 @@ $(document).ready(function() {
         var scrape=this;
         for (var i=0; i<results.length; i++) {
             var scrapeClasses = $(this).attr('class').split(/\s+/);
-            console.log(ScrapeClasses);
+            console.log(scrapeClasses);
             var resultClasses = $(result[i]).attr('class').split(/\s+/);
             console.log(resultClasses);
         }
