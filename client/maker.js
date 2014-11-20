@@ -46,8 +46,9 @@ $(document).ready(function() {
 
     $(".scrape").on("click", function(e) {
         var results = $(".result");
-
+        console.log("clicked");
         for (var i = results.length; i<0; i++) {
+            console.log(i);
             var scrapeClass=this.attr('class').split(/\s+/);
             var resultClass=result[i].attr('class').split(/\s+/);
             console.log(scrapeClass);
