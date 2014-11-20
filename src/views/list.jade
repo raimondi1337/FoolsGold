@@ -35,12 +35,12 @@ block body
                 a(href="#") #{val.query}
     section#resultList
       if !scrapes || scrapes.length == 0
-          div(class="result #{val.url}")
+          div.result
               h3.emptyResult No Results yet
       else
           each val in scrapes
             each item in val.results
-              div(class=)
+              div(class="#val.url")
                 a(href="#{item.url}") Result
 block scripts
         script(src="/assets/maker.js")
