@@ -15,16 +15,6 @@ var makerPage = function(req, res) {
         
         res.render('list', {scrapes: docs});
     });
-
-    ScrapeResult.ScrapeResultModel.findByOwner(req.session.account._id, function(err, docs) {
-
-        if(err) {
-            console.log(err);
-            return res.status(400).json({error:'An error occurred'}); 
-        }
-        
-        res.render('list', {results: docs});
-    });
 };
 
 var makeScrape = function(req, res) {
