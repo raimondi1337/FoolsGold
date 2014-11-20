@@ -29,8 +29,10 @@ block body
       else
           each val in scrapes
               div.scrape
-                p.scrapeURL Scraping: a(href="#{val.url}") #{val.url}
-                p.scrapeQuery For: #{val.query}
+                p.scrapeURL Scraping:
+                a(href="#{val.url}") #{val.url}
+                p.scrapeQuery For:
+                a(href="#") #{val.query}
     section#resultList
       if !scrapes || scrapes.length == 0
           div.result
