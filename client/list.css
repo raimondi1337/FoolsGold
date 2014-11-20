@@ -12,7 +12,6 @@ form{
 	height: 100%;
 	float: left;
 	display: inline-block;
-	text-align: center;
 }
 
 #scrapeList .scrape{
@@ -32,7 +31,6 @@ form{
 	height: 100%;
 	float: left;
 	display: inline-block;
-	text-align: center;
 }
 
 #resultList .result{
