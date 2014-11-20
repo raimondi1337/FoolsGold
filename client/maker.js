@@ -47,14 +47,9 @@ $(document).ready(function() {
     $(".scrape").on("click", function(e) {
         var results = $(".result");
         var scrape=this;
-        console.log($(this).attr('class'));
-        /*for (var i=0; i<results.length; i++) {
-            console.log(i);
-            var scrapeClass=scrape.attr('class');
-            var resultClass=result[i].attr('class').split(/\s+/);
-            console.log(scrapeClass);
-            console.log(resultClass);
-        }*/
+        for (var i=0; i<results.length; i++) {
+            console.log($(this).attr('class'));.split(/\s+/);
+        }
     });
 
     console.log($(".scrape"));
