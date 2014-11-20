@@ -9,6 +9,8 @@ form{
 #scrapeList{
 	background-color: #eeeeee;
 	width: 50%;
+	height: 100%;
+	float: left;
 	display: inline-block;
 	text-align: center;
 }
@@ -27,6 +29,8 @@ form{
 #resultList{
 	background-color: #eeeeee;
 	width: 50%;
+	height: 100%;
+	float: left;
 	display: inline-block;
 	text-align: center;
 }
