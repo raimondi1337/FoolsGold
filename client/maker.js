@@ -49,7 +49,8 @@ $(document).ready(function() {
         var scrape=this;
         for (var i=0; i<results.length; i++) {
             var scrapeClasses = $(this).attr('class').split(/\s+/);
-            if($(results[i]).hasClass(scrapeClass[1])){
+            console.log(scrapeClasses);
+            if($(results[i]).hasClass(scrapeClasses[1])){
                 console.log("match");
             } else {
                 console.log("not match");
