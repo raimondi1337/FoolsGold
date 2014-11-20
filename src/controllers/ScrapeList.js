@@ -16,7 +16,7 @@ var makerPage = function(req, res) {
         res.render('list', {scrapes: docs});
     });
 
-    ScrapeResult.ScrapeResultModel.findByOwner(models.ScrapeResult._id, function(err, docs) {
+    ScrapeResult.ScrapeResultModel.findByOwner(req.session.account._id, function(err, docs) {
 
         if(err) {
             console.log(err);
