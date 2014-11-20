@@ -1,10 +1,10 @@
-#list{
+#scrapeList{
 	background-color: #eeeeee;
-	width: 100%;
+	width: 500%;
 	display: inline-block;
 }
 
-#list .scrape{
+#scrapeList .scrape{
 	background-color: #aaaaaa;
 	width: 98%;
 	margin: .5%;
@@ -12,11 +12,11 @@
 	display: inline-block;
 }
 
-#list h3{
+#scrapeList h3{
 	display: inline-block;
 }
 
-#list .result{
+#scrapeList .result{
 	display: inline-block;
 	margin-left: 25px;
 }
