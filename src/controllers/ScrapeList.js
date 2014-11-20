@@ -12,8 +12,22 @@ var makerPage = function(req, res) {
             console.log(err);
             return res.status(400).json({error:'An error occurred'}); 
         }
+
+        var data.scrapes=docs;
+
+        ScrapeResult.ScrapeResultModel.findByOwner(req.session.account._id, function(err, docs) {
+
+            if(err) {
+                console.log(err);
+                return res.status(400).json({error:'An error occurred'}); 
+            }
+
+            data.results=docs;
         
-        res.render('list', {scrapes: docs});
+            res.render('list', data);
+    });
+        
+        //res.render('list', {scrapes: docs});
     });
 };
 
