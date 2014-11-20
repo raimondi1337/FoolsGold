@@ -50,10 +50,10 @@ $(document).ready(function() {
         for (var i=0; i<results.length; i++) {
             var scrapeClasses = $(this).attr('class').split(/\s+/);
             if($(results[i]).hasClass(scrapeClasses[1])){
-                $(results[i]).show();
+                $(results[i]).show('fast');
                 console.log('show');
             } else {
-                $(results[i]).hide();
+                $(results[i]).hide('fast');
                 console.log('hide');
             }
         }
