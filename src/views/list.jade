@@ -21,22 +21,15 @@ block body
       label(for="query") Query: 
       input#scrapeQuery(type="text", name="query", placeholder="ie 6UL wheels")
       a#makeScrapeSubmit(class="makeScrapeSubmit", href="#") Make new Scrape
-  section#scrapeList
+  section#list
     if !scrapes || scrapes.length == 0
-      div.scrape
-        h3.emptyScrape No Scrapes yet
+        div.scrape
+            h3.emptyScrape No Scrapes yet
     else
-       each val in scrapes
-          div.scrape
-            h3.scrapeTitle Scraping: #{val.url} For: #{val.query}
-  section#resultList
-    if !scrapes || scrapes.length == 0
-       div.scrape
-         h3.emptyScrape No Results yet
-    else
-      if !scrapes.results || scrapes.results.length==0
-        each val in scrapes.results
-           div.result
-             h3.resultTitle Result: #{val.url}
+        each val in scrapes
+            div.scrape
+              h3.scrapeTitle Scraping: #{val.url} For: #{val.query}
+              each item in val.results
+                a.result(href="#{item.url}") Result
 block scripts
         script(src="/assets/maker.js")
