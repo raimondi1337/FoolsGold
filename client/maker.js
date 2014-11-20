@@ -47,7 +47,7 @@ $(document).ready(function() {
     $(".scrape").on("click", function(e) {
         var results = $(".result");
         var scrape=this;
-        console.log(scrape);
+        console.log($(this).attr('class'));
         /*for (var i=0; i<results.length; i++) {
             console.log(i);
             var scrapeClass=scrape.attr('class');
