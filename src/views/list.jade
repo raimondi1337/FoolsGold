@@ -41,6 +41,6 @@ block body
           each scrape in scrapes
             each result in scrape.results
               div(class="result #{scrape.url}") 
-                a(href="#{result.url}") Result
+                a(href="#{result.url}") #{result.url}
 block scripts
         script(src="/assets/maker.js")
