@@ -50,7 +50,7 @@ $(document).ready(function() {
         console.log("clicked");
         for (var i=0; i<results.length; i++) {
             console.log(i);
-            var scrapeClass=scrape.attr('class').split(/\s+/);
+            var scrapeClass=scrape.attr('class');
             var resultClass=result[i].attr('class').split(/\s+/);
             //console.log(scrapeClass);
             //console.log(resultClass);
