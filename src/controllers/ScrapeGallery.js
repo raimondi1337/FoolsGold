@@ -21,6 +21,9 @@ var makerPage = function(req, res) {
 
 function doScrape(u, q){
     var x = [];
+    console.log('q='+q);
+    console.log('u='+u);
+    console.log('x before='+x);
     request('http://www.miataturbo.net/miata-parts-sale-trade-5/', function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
@@ -32,10 +35,7 @@ function doScrape(u, q){
             });
         }
     });
-    console.log('xxx');
-    console.log(q);
-    console.log(u);
-    console.log(x);
+    console.log('x after='+x);
     return x;
 }
 
