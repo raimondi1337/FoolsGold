@@ -19,25 +19,6 @@ var makerPage = function(req, res) {
     });
 };
 
-function getTestResults(){
-    var x = [];
-    request('http://forum.miata.net/vb/forumdisplay.php?f=124', function (error, response, html) {
-        if (!error && response.statusCode == 200) {
-            var $ = cheerio.load(html);
-            console.log('zxcvbnm');
-            var tRes= $("a:contains('wheels')").each(function(){
-                var t = $(this).text();
-                var a = $(this).attr('href');
-                var item={url: a, text: t};
-            });
-        }
-    });
-
-    return x;
-}
-
-var testResults = getTestResults();
-
 var makeScrape = function(req, res) {
     if(!req.body.url || !req.body.query) {
         return res.status(400).json({error: "Both URL and Query are required"});
@@ -46,7 +27,7 @@ var makeScrape = function(req, res) {
     var scrapeData = {
         url: req.body.url,
         query: req.body.query,
-        results: testResults,
+        results: [],
         owner: req.session.account._id
     };
     
