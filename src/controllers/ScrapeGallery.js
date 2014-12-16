@@ -20,19 +20,17 @@ var makerPage = function(req, res) {
 };
 
 function getTestResults(){
-    var x = [];
     request('http://forum.miata.net/vb/forumdisplay.php?f=124', function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
             console.log('zxcvbnm');
             var tRes= $("a:contains('wheels')").each(function(){
-                x.push($(this).href());
+                console.log($(this).href());
             });
-            console.log(x);
         }
     });
 
-    return [{url:'http://www.example.com/'}];
+    return [{url:'http://www.example.com/'},{url:'http://www.example.com/'}];
 }
 
 var testResults = getTestResults();
