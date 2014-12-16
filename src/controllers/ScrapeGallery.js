@@ -24,13 +24,11 @@ function getTestResults(){
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
             console.log('zxcvbnm');
-            var tRes= $("a:contains('[na]')").each(function(){
-                console.log(this);
-            });
+            var tRes= $("a");
         }
     });
 
-    return [{url:'http://www.example.com/'},{url:'http://www.example.com/'}];
+    return tRes;
 }
 
 var testResults = getTestResults();
