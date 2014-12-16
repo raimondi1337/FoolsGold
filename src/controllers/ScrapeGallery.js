@@ -41,7 +41,7 @@ var makeScrape = function(req, res) {
         return res.status(400).json({error: "Both URL and Query are required"});
     }
 
-    var testResults = getTestResults(req.bodu.url, req.body.query);
+    var testResults = getTestResults(req.body.url, req.body.query);
     
     var scrapeData = {
         url: req.body.url,
