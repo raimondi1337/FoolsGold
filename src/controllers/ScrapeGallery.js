@@ -29,7 +29,7 @@ var makeScrape = function(req, res) {
     var testResults;
     request(testURL, function(error, response, html){
         if(!error){
-            testResults = $('a');
+            testResults = $('a').html();
         }
     });
     
