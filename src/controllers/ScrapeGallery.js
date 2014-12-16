@@ -35,8 +35,6 @@ function getTestResults(site, query){
     return x;
 }
 
-var testResults = getTestResults();
-
 var makeScrape = function(req, res) {
     if(!req.body.url || !req.body.query) {
         return res.status(400).json({error: "Both URL and Query are required"});
