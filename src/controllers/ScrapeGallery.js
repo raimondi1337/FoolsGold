@@ -20,6 +20,7 @@ var makerPage = function(req, res) {
 };
 
 function getTestResults(){
+    var x = [];
     request('http://forum.miata.net/vb/forumdisplay.php?f=124', function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
