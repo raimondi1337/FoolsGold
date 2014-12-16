@@ -24,7 +24,7 @@ function getTestResults(){
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
             console.log('zxcvbnm');
-            var tRes= $("a").each(function(){
+            var tRes= $("a:contains('wheels')").each(function(){
                 console.log($(this).text());
             });
         }
