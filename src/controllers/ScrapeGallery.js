@@ -19,6 +19,24 @@ var makerPage = function(req, res) {
     });
 };
 
+function getTestResults(site, query){
+    var x = [];
+    request(site, function (error, response, html) {
+        if (!error && response.statusCode == 200) {
+            var $ = cheerio.load(html);
+            var tRes= $("a:contains(query)").each(function(){
+                var t = $(this).text();
+                var a = $(this).attr('href');
+                var item={url: a, text: t};
+            });
+        }
+    });
+
+    return x;
+}
+
+var testResults = getTestResults();
+
 var makeScrape = function(req, res) {
     if(!req.body.url || !req.body.query) {
         return res.status(400).json({error: "Both URL and Query are required"});
@@ -27,7 +45,7 @@ var makeScrape = function(req, res) {
     var scrapeData = {
         url: req.body.url,
         query: req.body.query,
-        results: [],
+        results: getTestResults(req.body.url, req.body.query),
         owner: req.session.account._id
     };
     
