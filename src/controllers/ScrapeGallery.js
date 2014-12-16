@@ -23,10 +23,12 @@ function getTestResults(){
     request('http://forum.miata.net/vb/forumdisplay.php?f=124', function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
+            var x = [];
             console.log('zxcvbnm');
             var tRes= $("a:contains('wheels')").each(function(){
-                console.log($(this).text());
+                x.push({url:$(this).attr('href')});
             });
+            console.log(x);
         }
     });
 
