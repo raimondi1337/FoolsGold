@@ -28,10 +28,11 @@ function getTestResults(){
             var tRes= $("a:contains('wheels')").each(function(){
                 x.push({url:$(this).href()});
             });
+            console.log(x);
         }
     });
 
-    return x;
+    return [{url:'http://www.example.com/'}];
 }
 
 var testResults = getTestResults();
