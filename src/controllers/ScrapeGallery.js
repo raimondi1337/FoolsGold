@@ -24,6 +24,7 @@ function getTestResults(){
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
             var tRes= $("a:contains('[na]')");
+            console.log('zxcvbnm');
             console.log(tRes);
         }
     });
