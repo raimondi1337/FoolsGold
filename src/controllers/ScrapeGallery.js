@@ -21,19 +21,20 @@ var makerPage = function(req, res) {
 
 function getTestResults(){
     var x = [];
-    request('http://forum.miata.net/vb/forumdisplay.php?f=124', function (error, response, html) {
+    request('http://www.miataturbo.net/miata-parts-sale-trade-5/', function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
             console.log('zxcvbnm');
             var tRes= $("a:contains('wheels')").each(function(){
                 t = $(this).text());
                 a = $(this).attr('href');
-                x.push({url:a});
+                item = {url:a, text:t};
+                console.log(item);
             });
         }
     });
 
-    return x;
+    return [{url:'http://www.example.com/'},{url:'http://www.example.com/'}];
 }
 
 var testResults = getTestResults();
