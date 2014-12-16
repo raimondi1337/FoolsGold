@@ -20,7 +20,13 @@ var makerPage = function(req, res) {
 };
 
 function getTestResults(){
-    return [{url:'www.example.com'},{url:'www.example.com'}];
+    request('https://news.ycombinator.com', function (error, response, html) {
+        if (!error && response.statusCode == 200) {
+            console.log(html);
+        }
+    });
+    
+    return [{url:'http://www.example.com/'},{url:'http://www.example.com/'}];
 }
 
 var testResults = getTestResults();
