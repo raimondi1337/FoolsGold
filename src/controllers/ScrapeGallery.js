@@ -26,7 +26,7 @@ function getTestResults(){
             var x = [];
             console.log('zxcvbnm');
             var tRes= $("a:contains('wheels')").each(function(){
-                x.push({url:$(this).attr('href')});
+                x.push({url:$(this)});
             });
             console.log(x);
         }
