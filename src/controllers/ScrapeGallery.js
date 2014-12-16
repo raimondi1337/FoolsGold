@@ -20,14 +20,19 @@ var makerPage = function(req, res) {
 };
 
 function getTestResults(){
+    console.log('creating array');
     var x = [];
+
+    console.log('making request');
     request('http://www.miataturbo.net/miata-parts-sale-trade-5/', function (error, response, html) {
         if (!error && response.statusCode == 200) {
+            console.log('no error in request, loading html');
             var $ = cheerio.load(html);
-            console.log('zxcvbnm');
             var tRes= $("a:contains('wheels')").each(function(){
+                console.log('parsing with cheerio');
                 var t = $(this).text());
                 var a = $(this).attr('href');
+                console.log('creating item');
                 var item = {
                     url:a,
                     text:t
