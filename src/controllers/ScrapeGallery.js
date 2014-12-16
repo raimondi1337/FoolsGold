@@ -28,6 +28,7 @@ function getTestResults(){
             var tRes= $("a:contains('wheels')").each(function(){
                 var t = $(this).text();
                 var a = $(this).attr('href');
+                var item={};
             });
         }
     });
