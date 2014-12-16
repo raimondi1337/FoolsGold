@@ -29,6 +29,7 @@ function getTestResults(u, q){
                 var t = $(this).text();
                 var a = $(this).attr('href');
                 var item={url: a, text: t};
+                console.log(item);
                 x.push(item);
             });
         }
