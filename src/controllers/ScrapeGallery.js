@@ -23,8 +23,8 @@ function getTestResults(){
     request('http://forum.miata.net/vb/forumdisplay.php?f=124', function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
-            var tRes= $(a:contains('[na]'));
-            console.log(tRes);
+            //var tRes= $(a:contains('[na]'));
+            //console.log(tRes);
         }
     });
 
