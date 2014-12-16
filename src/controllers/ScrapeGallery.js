@@ -21,7 +21,7 @@ var makerPage = function(req, res) {
 
 function getTestResults(){
     console.log('creating array');
-    var x = [];
+    //var x = [];
 
     console.log('making request');
     request('http://www.miataturbo.net/miata-parts-sale-trade-5/', function (error, response, html) {
