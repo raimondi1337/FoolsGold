@@ -25,7 +25,7 @@ function getTestResults(){
             var $ = cheerio.load(html);
             console.log('zxcvbnm');
             var tRes= $("a:contains('wheels')").each(function(){
-                console.log($(this).href());
+                console.log($(this).text());
             });
         }
     });
