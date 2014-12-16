@@ -30,13 +30,13 @@ function getTestResults(){
             var $ = cheerio.load(html);
             var tRes= $("a:contains('wheels')").each(function(){
                 console.log('parsing with cheerio');
-                var t = $(this).text());
-                var a = $(this).attr('href');
+                //var t = $(this).text());
+                //var a = $(this).attr('href');
                 console.log('creating item');
-                var item = {
-                    url:a,
-                    text:t
-                };
+                //var item = {
+                   // url:a,
+                   // text:t
+                //};
                 console.log(item);
             });
         }
