@@ -19,7 +19,7 @@ var makerPage = function(req, res) {
     });
 };
 
-var testResults = [{url:'test.com'},{url:'example.com'}];
+var testResults = [{url:'https://www.test.com/'},{url:'http://www.example.com/'}];
 
 var makeScrape = function(req, res) {
     if(!req.body.url || !req.body.query) {
