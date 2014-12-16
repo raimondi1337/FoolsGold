@@ -37,6 +37,7 @@ function doScrape(link, query){
             });
         }
     });
+    console.log('x after: '+x)
     return x;
 }
 
