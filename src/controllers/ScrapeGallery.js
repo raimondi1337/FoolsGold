@@ -19,17 +19,17 @@ var makerPage = function(req, res) {
     });
 };
 
-function doScrape(u, q){
+function doScrape(link, query){
     var x = [];
     console.log('x before='+x);
-    request(u, function (error, response, html) {
+    request(link, function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
-            var tRes= $("a:contains(q)").each(function(){
+            var tRes= $("a:contains(query)").each(function(){
                 var t = $(this).text();
                 var a = $(this).attr('href');
                 var item={url: a, text: t};
-                console.log(item);
+                console.log('item found - '+item);
                 x.push(item);
             });
         }
