@@ -21,12 +21,15 @@ var makerPage = function(req, res) {
 
 function doScrape(link, query){
     var x = [];
-    request('http://www.miataturbo.net/miata-parts-sale-trade-5/', function (error, response, html) {
+    //download the page at the url link
+    request(link, function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
-            $("a:contains('wheels')").each(function(){
+            //get all of the links on the page that contain the query
+            $("a:contains(query)").each(function(){
                 var t = $(this).text();
                 var a = $(this).attr('href');
+                //itemize the link and the text associated with it
                 var item={url: a, text: t};
                 x.push(item);
             });
