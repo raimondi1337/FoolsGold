@@ -21,15 +21,13 @@ var makerPage = function(req, res) {
 
 function doScrape(link, query){
     var x = [];
-    console.log('link = '+link);
-    request(link, function (error, response, html) {
+    request('http://www.miataturbo.net/miata-parts-sale-trade-5/', function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
-            $("a:contains(query)").each(function(){
+            $("a:contains('wheels')").each(function(){
                 var t = $(this).text();
                 var a = $(this).attr('href');
                 var item={url: a, text: t};
-                console.log('item found - '+item);
                 x.push(item);
             });
         }
@@ -44,7 +42,6 @@ var makeScrape = function(req, res) {
     }
 
     var currentResults = doScrape(req.body.url, req.body.query);
-    console.log('results found: '+currentResults);
     
     var scrapeData = {
         url: req.body.url,
