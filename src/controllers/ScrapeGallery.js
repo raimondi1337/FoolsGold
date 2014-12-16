@@ -32,7 +32,8 @@ function doScrape(u, q){
             });
         }
     });
-
+    console.log('xxx');
+    console.log(x);
     return x;
 }
 
