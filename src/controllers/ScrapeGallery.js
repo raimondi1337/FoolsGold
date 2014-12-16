@@ -25,7 +25,7 @@ function doScrape(link, query){
     request(link, function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
-            console.log('query = '+query);
+            console.log('query = '+query.toString());
             var tRes= $("a:contains(query)").each(function(){
                 var t = $(this).text();
                 console.log('t = '+t);
