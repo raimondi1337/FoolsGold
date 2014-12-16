@@ -19,16 +19,6 @@ var makerPage = function(req, res) {
     });
 };
 
-//initial scrape
-function testRequest(){
-    var testURL = 'http://forum.miata.net/vb/forumdisplay.php?f=124';
-    request(testURL, function(error, response, html){
-        if(!error){
-            return($.makeArray($('a')));
-        }
-    });
-}
-
 var makeScrape = function(req, res) {
     if(!req.body.url || !req.body.query) {
         return res.status(400).json({error: "Both URL and Query are required"});
@@ -37,7 +27,7 @@ var makeScrape = function(req, res) {
     var scrapeData = {
         url: req.body.url,
         query: req.body.query,
-        results: testRequest,
+        results: [{url: 'http://supermotojunkie.com/forumdisplay.php?72-Bikes'},{url: 'http://forum.miata.net/vb/forumdisplay.php?f=99'}],
         owner: req.session.account._id
     };
     
