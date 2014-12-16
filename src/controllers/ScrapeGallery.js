@@ -20,7 +20,7 @@ var makerPage = function(req, res) {
 };
 
 function getTestResults(){
-    request('https://news.ycombinator.com', function (error, response, html) {
+    request('http://forum.miata.net/vb/forumdisplay.php?f=124', function (error, response, html) {
         if (!error && response.statusCode == 200) {
             console.log(html);
         }
