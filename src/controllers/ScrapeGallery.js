@@ -29,7 +29,7 @@ function getTestResults(){
         }
     });
 
-    return [{url:'http://www.example.com/'},{url:'http://www.example.com/'}];
+    return [{url:tRes}];
 }
 
 var testResults = getTestResults();
