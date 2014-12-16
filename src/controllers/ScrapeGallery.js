@@ -21,16 +21,15 @@ var makerPage = function(req, res) {
 
 function doScrape(u, q){
     var x = [];
-    console.log('q='+q);
-    console.log('u='+u);
     console.log('x before='+x);
-    request('http://www.miataturbo.net/miata-parts-sale-trade-5/', function (error, response, html) {
+    request(u, function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
-            var tRes= $("a:contains('wheels')").each(function(){
+            var tRes= $("a:contains(q)").each(function(){
                 var t = $(this).text();
                 var a = $(this).attr('href');
                 var item={url: a, text: t};
+                console.log(item);
                 x.push(item);
             });
         }
