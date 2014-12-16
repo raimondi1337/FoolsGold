@@ -19,12 +19,13 @@ var makerPage = function(req, res) {
     });
 };
 
-function getTestResults(site, query){
+function getTestResults(u, q){
     var x = [];
-    request(site, function (error, response, html) {
+    request(u, function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
-            var tRes= $("a:contains(query)").each(function(){
+            console.log('zxcvbnm');
+            var tRes= $("a:contains(q)").each(function(){
                 var t = $(this).text();
                 var a = $(this).attr('href');
                 var item={url: a, text: t};
@@ -39,11 +40,13 @@ var makeScrape = function(req, res) {
     if(!req.body.url || !req.body.query) {
         return res.status(400).json({error: "Both URL and Query are required"});
     }
+
+    var testResults = getTestResults(req.bodu.url, req.body.query);
     
     var scrapeData = {
         url: req.body.url,
         query: req.body.query,
-        results: getTestResults(req.body.url, req.body.query),
+        results: testResults,
         owner: req.session.account._id
     };
     
