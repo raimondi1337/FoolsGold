@@ -33,6 +33,8 @@ function doScrape(u, q){
         }
     });
     console.log('xxx');
+    console.log(q);
+    console.log(u);
     console.log(x);
     return x;
 }
