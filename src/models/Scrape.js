@@ -22,7 +22,7 @@ var ScrapeSchema = new mongoose.Schema({
     },
 
     results: {
-        type: Object
+        type: Array
     },
     
     owner: 	{
