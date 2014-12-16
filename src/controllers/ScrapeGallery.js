@@ -29,12 +29,11 @@ function getTestResults(){
                 var t = $(this).text();
                 var a = $(this).attr('href');
                 var item={url: a, text: t};
-                console.log(item);
             });
         }
     });
 
-    return [{url:'http://www.example.com/'},{url:'http://www.example.com/'}];
+    return x;
 }
 
 var testResults = getTestResults();
