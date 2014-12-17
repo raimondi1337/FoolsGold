@@ -37,7 +37,6 @@ function doScrape(link, query, callback){
             });
 
             console.log('testing from here');
-            console.log(response);
             console.log(x);
             return callback(x);
         }
