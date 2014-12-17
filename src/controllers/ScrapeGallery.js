@@ -19,7 +19,7 @@ var makerPage = function(req, res) {
     });
 };
 
-function doScrape(link, query){
+function doScrape(link, query, callback){
     var x = [];
     //download the page at the url link
     request(link, function (error, response, html) {
@@ -33,10 +33,10 @@ function doScrape(link, query){
                 var item={url: a, text: t};
                 x.push(item);
             });
+
+            return callback(x);
         }
     });
-    console.log('x after: '+x)
-    return x;
 }
 
 var makeScrape = function(req, res) {
@@ -44,24 +44,24 @@ var makeScrape = function(req, res) {
         return res.status(400).json({error: "Both URL and Query are required"});
     }
 
-    var currentResults = doScrape(req.body.url, req.body.query);
-    
-    var scrapeData = {
-        url: req.body.url,
-        query: req.body.query,
-        results: currentResults,
-        owner: req.session.account._id
-    };
-    
-    var newScrape = new Scrape.ScrapeModel(scrapeData);
-    
-    newScrape.save(function(err) {
-        if(err) {
-            console.log(err);
-            return res.status(400).json({error:'An error occurred'}); 
-        }
+    doScrape(req.body.url, req.body.query, function(currentResults){
+        var scrapeData = {
+            url: req.body.url,
+            query: req.body.query,
+            results: currentResults,
+            owner: req.session.account._id
+        };
+        
+        var newScrape = new Scrape.ScrapeModel(scrapeData);
+        
+        newScrape.save(function(err) {
+            if(err) {
+                console.log(err);
+                return res.status(400).json({error:'An error occurred'}); 
+            }
 
-        res.json({redirect: '/gallery'});
+            res.json({redirect: '/gallery'});
+        });
     });
     
 };
