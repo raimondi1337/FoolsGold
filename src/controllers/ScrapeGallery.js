@@ -31,9 +31,11 @@ function doScrape(link, query, callback){
                 var a = $(this).attr('href');
                 //itemize the link and the text associated with it
                 var item={url: a, text: t};
+                console.log(item);
                 x.push(item);
             });
 
+            console.log(x);
             return callback(x);
         }
     });
