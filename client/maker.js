@@ -43,22 +43,5 @@ $(document).ready(function() {
         sendAjax($("#scrapeForm").attr("action"), $("#scrapeForm").serialize());
         return false;
     });
-
-    $(".scrape").on("click", function(e) {
-        var results = $(".result");
-        var scrape=this;
-        for (var i=0; i<results.length; i++) {
-            var scrapeClasses = $(this).attr('class').split(/\s+/);
-            if($(results[i]).hasClass(scrapeClasses[1])){
-                $(results[i]).show('fast');
-                console.log('show');
-            } else {
-                $(results[i]).hide('fast');
-                console.log('hide');
-            }
-        }
-    });
-
-    console.log($(".scrape"));
     
 });
